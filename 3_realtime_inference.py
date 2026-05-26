@@ -251,10 +251,12 @@ def main():
 
     with mp_holistic.Holistic(
         static_image_mode=False,
-        model_complexity=1,
+        model_complexity=2,           # Menggunakan model paling akurat (Heavy)
+        min_detection_confidence=0.5, # Mengambil logika threshold dari skrip 2
+        min_tracking_confidence=0.5,  # Mengambil logika threshold dari skrip 2
         enable_segmentation=False
     ) as holistic:
-
+        
         while True:
             ret, frame = stream.read()
             if not ret or frame is None:

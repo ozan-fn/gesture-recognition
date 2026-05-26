@@ -12,8 +12,8 @@ ENV/
 .ipynb_checkpoints
 
 # Model files (large)
-*.h5
-*.pkl
+# *.h5
+# *.pkl
 
 # Data directories
 MP_Data/

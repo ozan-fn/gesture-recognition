@@ -16,7 +16,7 @@ ENV/
 # *.pkl
 
 # Data directories
-MP_Data/
+# MP_Data/
 Dataset/
 
 # IDE

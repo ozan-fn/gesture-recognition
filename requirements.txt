@@ -1,6 +1,6 @@
 mediapipe==0.10.14
 opencv-python==4.9.0.80
 tensorflow==2.15.0
-# numpy==1.26.4
+numpy==1.26.4
 scikit-learn==1.4.2
-# tqdm==4.66.4
+tqdm==4.66.4

@@ -7,6 +7,7 @@ __pycache__/
 .venv/
 venv/
 ENV/
+myenv/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -18,6 +19,7 @@ ENV/
 # Data directories
 MP_Data/
 Dataset/
+versi2/dataset/
 
 # IDE
 .vscode/

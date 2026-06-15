@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-15T12:17:44.905609",
+  "timestamp": "2026-06-15T13:24:04.748539",
   "total_words": 40,
   "words": {
     "Apa": {
@@ -8,31 +8,31 @@
         {
           "filename": "BISINDO_Apa_001.mp4",
           "predicted": "Apa",
-          "confidence": 0.9991658926010132,
+          "confidence": 0.9836975932121277,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Apa_002.mp4",
           "predicted": "Apa",
-          "confidence": 0.9999045133590698,
+          "confidence": 0.996860146522522,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Apa_003.mp4",
           "predicted": "Apa",
-          "confidence": 0.9999366998672485,
+          "confidence": 0.996594250202179,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Apa_004.mp4",
           "predicted": "Apa",
-          "confidence": 0.9991374015808105,
+          "confidence": 0.9961821436882019,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Apa_005.mp4",
           "predicted": "Apa",
-          "confidence": 0.9997387528419495,
+          "confidence": 0.9953081011772156,
           "status": "Correct"
         }
       ],
@@ -44,32 +44,32 @@
       "incorrect_videos": [
         {
           "filename": "BISINDO_Apa Kabar_001.mp4",
-          "predicted": "Berdiri",
-          "confidence": 0.9512892961502075,
+          "predicted": "Apa",
+          "confidence": 0.4287625551223755,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Apa Kabar_002.mp4",
           "predicted": "Apa",
-          "confidence": 0.9993417859077454,
+          "confidence": 0.9928988218307495,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Apa Kabar_003.mp4",
-          "predicted": "Apa Kabar",
-          "confidence": 0.6876746416091919,
+          "predicted": "Baik",
+          "confidence": 0.5549046397209167,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Apa Kabar_004.mp4",
-          "predicted": "Berdiri",
-          "confidence": 0.36673033237457275,
+          "predicted": "Kemana",
+          "confidence": 0.943088173866272,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Apa Kabar_005.mp4",
-          "predicted": "Berdiri",
-          "confidence": 0.865604043006897,
+          "predicted": "Baik",
+          "confidence": 0.6227226853370667,
           "status": "Wrong"
         }
       ]
@@ -80,31 +80,31 @@
         {
           "filename": "BISINDO_Bagaimana_001.mp4",
           "predicted": "Bagaimana",
-          "confidence": 0.9824824333190918,
+          "confidence": 0.9907410144805908,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Bagaimana_002.mp4",
           "predicted": "Bagaimana",
-          "confidence": 0.9960132837295532,
+          "confidence": 0.9938766360282898,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Bagaimana_003.mp4",
           "predicted": "Bagaimana",
-          "confidence": 0.9995874762535095,
+          "confidence": 0.9945828318595886,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Bagaimana_004.mp4",
           "predicted": "Bagaimana",
-          "confidence": 0.9975390434265137,
+          "confidence": 0.9960492253303528,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Bagaimana_005.mp4",
           "predicted": "Bagaimana",
-          "confidence": 0.9991328120231628,
+          "confidence": 0.9979910850524902,
           "status": "Correct"
         }
       ],
@@ -116,31 +116,31 @@
         {
           "filename": "BISINDO_Baik_001.mp4",
           "predicted": "Baik",
-          "confidence": 0.9957608580589294,
+          "confidence": 0.9854490160942078,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Baik_002.mp4",
           "predicted": "Baik",
-          "confidence": 0.9957553148269653,
+          "confidence": 0.9966443777084351,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Baik_003.mp4",
           "predicted": "Baik",
-          "confidence": 0.9990562796592712,
+          "confidence": 0.9972688555717468,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Baik_004.mp4",
           "predicted": "Baik",
-          "confidence": 0.9995144605636597,
+          "confidence": 0.9979485869407654,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Baik_005.mp4",
           "predicted": "Baik",
-          "confidence": 0.9993680119514465,
+          "confidence": 0.9981561303138733,
           "status": "Correct"
         }
       ],
@@ -152,31 +152,31 @@
         {
           "filename": "BISINDO_Belajar_001.mp4",
           "predicted": "Belajar",
-          "confidence": 0.9871015548706055,
+          "confidence": 0.9881409406661987,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Belajar_002.mp4",
           "predicted": "Belajar",
-          "confidence": 0.9981186985969543,
+          "confidence": 0.9857498407363892,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Belajar_003.mp4",
           "predicted": "Belajar",
-          "confidence": 0.9960301518440247,
+          "confidence": 0.9808229804039001,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Belajar_004.mp4",
           "predicted": "Belajar",
-          "confidence": 0.996533989906311,
+          "confidence": 0.9909822344779968,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Belajar_005.mp4",
           "predicted": "Belajar",
-          "confidence": 0.992741584777832,
+          "confidence": 0.9677625298500061,
           "status": "Correct"
         }
       ],
@@ -188,69 +188,70 @@
         {
           "filename": "BISINDO_Berapa_001.mp4",
           "predicted": "Berapa",
-          "confidence": 0.9987170696258545,
+          "confidence": 0.9917649626731873,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Berapa_002.mp4",
           "predicted": "Berapa",
-          "confidence": 0.9708657264709473,
+          "confidence": 0.9952871799468994,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Berapa_003.mp4",
           "predicted": "Berapa",
-          "confidence": 0.998872697353363,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Berapa_004.mp4",
-          "predicted": "Berapa",
-          "confidence": 0.9752564430236816,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Berapa_005.mp4",
-          "predicted": "Berapa",
-          "confidence": 0.9979034662246704,
-          "status": "Correct"
-        }
-      ],
-      "incorrect_videos": []
-    },
-    "Berdiri": {
-      "total_videos": 5,
-      "correct_videos": [
-        {
-          "filename": "BISINDO_Berdiri_001.mp4",
-          "predicted": "Berdiri",
-          "confidence": 0.8209390640258789,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Berdiri_003.mp4",
-          "predicted": "Berdiri",
-          "confidence": 0.8104854822158813,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Berdiri_004.mp4",
-          "predicted": "Berdiri",
-          "confidence": 0.995689332485199,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Berdiri_005.mp4",
-          "predicted": "Berdiri",
-          "confidence": 0.9991771578788757,
+          "confidence": 0.8210933208465576,
           "status": "Correct"
         }
       ],
       "incorrect_videos": [
         {
+          "filename": "BISINDO_Berapa_004.mp4",
+          "predicted": "Berapa",
+          "confidence": 0.4928571581840515,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Berapa_005.mp4",
+          "predicted": "Kemana",
+          "confidence": 0.948749303817749,
+          "status": "Wrong"
+        }
+      ]
+    },
+    "Berdiri": {
+      "total_videos": 5,
+      "correct_videos": [
+        {
+          "filename": "BISINDO_Berdiri_004.mp4",
+          "predicted": "Berdiri",
+          "confidence": 0.8873699307441711,
+          "status": "Correct"
+        },
+        {
+          "filename": "BISINDO_Berdiri_005.mp4",
+          "predicted": "Berdiri",
+          "confidence": 0.9793909788131714,
+          "status": "Correct"
+        }
+      ],
+      "incorrect_videos": [
+        {
+          "filename": "BISINDO_Berdiri_001.mp4",
+          "predicted": "Berdiri",
+          "confidence": 0.6283228993415833,
+          "status": "Wrong"
+        },
+        {
           "filename": "BISINDO_Berdiri_002.mp4",
-          "predicted": "Membaca",
-          "confidence": 0.3270892798900604,
+          "predicted": "Dia",
+          "confidence": 0.2779390215873718,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Berdiri_003.mp4",
+          "predicted": "Dia",
+          "confidence": 0.4193671643733978,
           "status": "Wrong"
         }
       ]
@@ -261,31 +262,31 @@
         {
           "filename": "BISINDO_Bingung_001.mp4",
           "predicted": "Bingung",
-          "confidence": 0.9856033325195312,
+          "confidence": 0.9833868145942688,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Bingung_002.mp4",
           "predicted": "Bingung",
-          "confidence": 0.9867528676986694,
+          "confidence": 0.9903092980384827,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Bingung_003.mp4",
           "predicted": "Bingung",
-          "confidence": 0.9040064215660095,
+          "confidence": 0.9914155602455139,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Bingung_004.mp4",
           "predicted": "Bingung",
-          "confidence": 0.9740349054336548,
+          "confidence": 0.9553277492523193,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Bingung_005.mp4",
           "predicted": "Bingung",
-          "confidence": 0.9667147397994995,
+          "confidence": 0.9845178723335266,
           "status": "Correct"
         }
       ],
@@ -295,38 +296,37 @@
       "total_videos": 5,
       "correct_videos": [
         {
+          "filename": "BISINDO_Dia_001.mp4",
+          "predicted": "Dia",
+          "confidence": 0.9858481884002686,
+          "status": "Correct"
+        },
+        {
+          "filename": "BISINDO_Dia_002.mp4",
+          "predicted": "Dia",
+          "confidence": 0.9829810857772827,
+          "status": "Correct"
+        },
+        {
           "filename": "BISINDO_Dia_003.mp4",
           "predicted": "Dia",
-          "confidence": 0.9043762683868408,
+          "confidence": 0.9794266223907471,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Dia_004.mp4",
           "predicted": "Dia",
-          "confidence": 0.9340318441390991,
+          "confidence": 0.9823679327964783,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Dia_005.mp4",
           "predicted": "Dia",
-          "confidence": 0.9162307977676392,
+          "confidence": 0.9835096001625061,
           "status": "Correct"
         }
       ],
-      "incorrect_videos": [
-        {
-          "filename": "BISINDO_Dia_001.mp4",
-          "predicted": "Dia",
-          "confidence": 0.5630539655685425,
-          "status": "Wrong"
-        },
-        {
-          "filename": "BISINDO_Dia_002.mp4",
-          "predicted": "Dimana",
-          "confidence": 0.8977874517440796,
-          "status": "Wrong"
-        }
-      ]
+      "incorrect_videos": []
     },
     "Dimana": {
       "total_videos": 5,
@@ -334,35 +334,36 @@
         {
           "filename": "BISINDO_Dimana_001.mp4",
           "predicted": "Dimana",
-          "confidence": 0.9980509281158447,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Dimana_002.mp4",
-          "predicted": "Dimana",
-          "confidence": 0.9962769150733948,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Dimana_003.mp4",
-          "predicted": "Dimana",
-          "confidence": 0.9985039234161377,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Dimana_004.mp4",
-          "predicted": "Dimana",
-          "confidence": 0.9966040849685669,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Dimana_005.mp4",
-          "predicted": "Dimana",
-          "confidence": 0.9975231289863586,
+          "confidence": 0.847059428691864,
           "status": "Correct"
         }
       ],
-      "incorrect_videos": []
+      "incorrect_videos": [
+        {
+          "filename": "BISINDO_Dimana_002.mp4",
+          "predicted": "Dia",
+          "confidence": 0.9469441771507263,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Dimana_003.mp4",
+          "predicted": "Dia",
+          "confidence": 0.7997257113456726,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Dimana_004.mp4",
+          "predicted": "Dia",
+          "confidence": 0.7422056794166565,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Dimana_005.mp4",
+          "predicted": "Dia",
+          "confidence": 0.9823657870292664,
+          "status": "Wrong"
+        }
+      ]
     },
     "Duduk": {
       "total_videos": 5,
@@ -370,31 +371,31 @@
         {
           "filename": "BISINDO_Duduk_001.mp4",
           "predicted": "Duduk",
-          "confidence": 0.9838273525238037,
+          "confidence": 0.9929656982421875,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Duduk_002.mp4",
           "predicted": "Duduk",
-          "confidence": 0.9819712042808533,
+          "confidence": 0.9905695915222168,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Duduk_003.mp4",
           "predicted": "Duduk",
-          "confidence": 0.9952630996704102,
+          "confidence": 0.9915669560432434,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Duduk_004.mp4",
           "predicted": "Duduk",
-          "confidence": 0.9608691930770874,
+          "confidence": 0.882337749004364,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Duduk_005.mp4",
           "predicted": "Duduk",
-          "confidence": 0.9625428318977356,
+          "confidence": 0.9677028059959412,
           "status": "Correct"
         }
       ],
@@ -406,31 +407,31 @@
         {
           "filename": "BISINDO_Halo_001.mp4",
           "predicted": "Halo",
-          "confidence": 0.9868011474609375,
+          "confidence": 0.9763479828834534,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Halo_002.mp4",
           "predicted": "Halo",
-          "confidence": 0.9943630695343018,
+          "confidence": 0.990514874458313,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Halo_003.mp4",
           "predicted": "Halo",
-          "confidence": 0.9920980930328369,
+          "confidence": 0.9812114238739014,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Halo_004.mp4",
           "predicted": "Halo",
-          "confidence": 0.9955013394355774,
+          "confidence": 0.9812400937080383,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Halo_005.mp4",
           "predicted": "Halo",
-          "confidence": 0.995238184928894,
+          "confidence": 0.9869483709335327,
           "status": "Correct"
         }
       ],
@@ -442,69 +443,69 @@
         {
           "filename": "BISINDO_Kalian_001.mp4",
           "predicted": "Kalian",
-          "confidence": 0.999829888343811,
+          "confidence": 0.9941465854644775,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kalian_002.mp4",
           "predicted": "Kalian",
-          "confidence": 0.9986152648925781,
+          "confidence": 0.9616215825080872,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kalian_003.mp4",
           "predicted": "Kalian",
-          "confidence": 0.9992415904998779,
+          "confidence": 0.9755696058273315,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kalian_004.mp4",
           "predicted": "Kalian",
-          "confidence": 0.9910797476768494,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Kalian_005.mp4",
-          "predicted": "Kalian",
-          "confidence": 0.9542074799537659,
-          "status": "Correct"
-        }
-      ],
-      "incorrect_videos": []
-    },
-    "Kami": {
-      "total_videos": 5,
-      "correct_videos": [
-        {
-          "filename": "BISINDO_Kami_002.mp4",
-          "predicted": "Kami",
-          "confidence": 0.973556399345398,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Kami_004.mp4",
-          "predicted": "Kami",
-          "confidence": 0.9214605093002319,
+          "confidence": 0.9664636850357056,
           "status": "Correct"
         }
       ],
       "incorrect_videos": [
         {
+          "filename": "BISINDO_Kalian_005.mp4",
+          "predicted": "Dia",
+          "confidence": 0.31942594051361084,
+          "status": "Wrong"
+        }
+      ]
+    },
+    "Kami": {
+      "total_videos": 5,
+      "correct_videos": [],
+      "incorrect_videos": [
+        {
           "filename": "BISINDO_Kami_001.mp4",
           "predicted": "Kami",
-          "confidence": 0.5544574856758118,
+          "confidence": 0.24253754317760468,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Kami_002.mp4",
+          "predicted": "Kami",
+          "confidence": 0.4781467318534851,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Kami_003.mp4",
-          "predicted": "Membaca",
-          "confidence": 0.5228388905525208,
+          "predicted": "Berapa",
+          "confidence": 0.7794168591499329,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Kami_004.mp4",
+          "predicted": "Berapa",
+          "confidence": 0.9394559860229492,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Kami_005.mp4",
-          "predicted": "Kami",
-          "confidence": 0.6028897166252136,
+          "predicted": "Berapa",
+          "confidence": 0.9868218302726746,
           "status": "Wrong"
         }
       ]
@@ -515,31 +516,31 @@
         {
           "filename": "BISINDO_Kamu_001.mp4",
           "predicted": "Kamu",
-          "confidence": 0.9691457748413086,
+          "confidence": 0.9580678939819336,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kamu_002.mp4",
           "predicted": "Kamu",
-          "confidence": 0.994293212890625,
+          "confidence": 0.9964331388473511,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kamu_003.mp4",
           "predicted": "Kamu",
-          "confidence": 0.900687575340271,
+          "confidence": 0.9565566778182983,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kamu_004.mp4",
           "predicted": "Kamu",
-          "confidence": 0.9854143857955933,
+          "confidence": 0.9708746075630188,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kamu_005.mp4",
           "predicted": "Kamu",
-          "confidence": 0.9889761209487915,
+          "confidence": 0.9721792340278625,
           "status": "Correct"
         }
       ],
@@ -551,31 +552,31 @@
         {
           "filename": "BISINDO_Kapan_001.mp4",
           "predicted": "Kapan",
-          "confidence": 0.9980806112289429,
+          "confidence": 0.9984022974967957,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kapan_002.mp4",
           "predicted": "Kapan",
-          "confidence": 0.9845302104949951,
+          "confidence": 0.9981537461280823,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kapan_003.mp4",
           "predicted": "Kapan",
-          "confidence": 0.997467041015625,
+          "confidence": 0.9975212216377258,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kapan_004.mp4",
           "predicted": "Kapan",
-          "confidence": 0.9962383508682251,
+          "confidence": 0.9980377554893494,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kapan_005.mp4",
           "predicted": "Kapan",
-          "confidence": 0.998492956161499,
+          "confidence": 0.9976943135261536,
           "status": "Correct"
         }
       ],
@@ -587,31 +588,31 @@
         {
           "filename": "BISINDO_Kemana_001.mp4",
           "predicted": "Kemana",
-          "confidence": 0.9992774128913879,
+          "confidence": 0.9966110587120056,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kemana_002.mp4",
           "predicted": "Kemana",
-          "confidence": 0.9986674785614014,
+          "confidence": 0.9925175905227661,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kemana_003.mp4",
           "predicted": "Kemana",
-          "confidence": 0.9992629885673523,
+          "confidence": 0.9967285394668579,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kemana_004.mp4",
           "predicted": "Kemana",
-          "confidence": 0.9990288019180298,
+          "confidence": 0.9965335130691528,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kemana_005.mp4",
           "predicted": "Kemana",
-          "confidence": 0.9994744658470154,
+          "confidence": 0.9940528273582458,
           "status": "Correct"
         }
       ],
@@ -623,31 +624,31 @@
         {
           "filename": "BISINDO_Kita_001.mp4",
           "predicted": "Kita",
-          "confidence": 0.9986611604690552,
+          "confidence": 0.994564414024353,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kita_002.mp4",
           "predicted": "Kita",
-          "confidence": 0.9995941519737244,
+          "confidence": 0.999174177646637,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kita_003.mp4",
           "predicted": "Kita",
-          "confidence": 0.9996863603591919,
+          "confidence": 0.9993057250976562,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kita_004.mp4",
           "predicted": "Kita",
-          "confidence": 0.999627947807312,
+          "confidence": 0.9992326498031616,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Kita_005.mp4",
           "predicted": "Kita",
-          "confidence": 0.9997269511222839,
+          "confidence": 0.999244213104248,
           "status": "Correct"
         }
       ],
@@ -659,61 +660,56 @@
         {
           "filename": "BISINDO_Makan_001.mp4",
           "predicted": "Makan",
-          "confidence": 0.9697586297988892,
+          "confidence": 0.9952632188796997,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Makan_002.mp4",
           "predicted": "Makan",
-          "confidence": 0.9990264177322388,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Makan_003.mp4",
-          "predicted": "Makan",
-          "confidence": 0.9916986227035522,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Makan_004.mp4",
-          "predicted": "Makan",
-          "confidence": 0.9964068531990051,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Makan_005.mp4",
-          "predicted": "Makan",
-          "confidence": 0.9396737813949585,
+          "confidence": 0.9962052702903748,
           "status": "Correct"
         }
       ],
-      "incorrect_videos": []
+      "incorrect_videos": [
+        {
+          "filename": "BISINDO_Makan_003.mp4",
+          "predicted": "Melihat",
+          "confidence": 0.9986359477043152,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Makan_004.mp4",
+          "predicted": "Melihat",
+          "confidence": 0.6491811275482178,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Makan_005.mp4",
+          "predicted": "Melihat",
+          "confidence": 0.9978637099266052,
+          "status": "Wrong"
+        }
+      ]
     },
     "Mandi": {
       "total_videos": 5,
       "correct_videos": [
         {
-          "filename": "BISINDO_Mandi_002.mp4",
-          "predicted": "Mandi",
-          "confidence": 0.835568904876709,
-          "status": "Correct"
-        },
-        {
           "filename": "BISINDO_Mandi_003.mp4",
           "predicted": "Mandi",
-          "confidence": 0.8198084235191345,
+          "confidence": 0.9842875003814697,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Mandi_004.mp4",
           "predicted": "Mandi",
-          "confidence": 0.9309383034706116,
+          "confidence": 0.957749605178833,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Mandi_005.mp4",
           "predicted": "Mandi",
-          "confidence": 0.9728657603263855,
+          "confidence": 0.9183295369148254,
           "status": "Correct"
         }
       ],
@@ -721,7 +717,13 @@
         {
           "filename": "BISINDO_Mandi_001.mp4",
           "predicted": "Mandi",
-          "confidence": 0.6414300203323364,
+          "confidence": 0.5574390292167664,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Mandi_002.mp4",
+          "predicted": "Mandi",
+          "confidence": 0.5134512186050415,
           "status": "Wrong"
         }
       ]
@@ -730,35 +732,35 @@
       "total_videos": 5,
       "correct_videos": [
         {
-          "filename": "BISINDO_Marah_001.mp4",
+          "filename": "BISINDO_Marah_002.mp4",
           "predicted": "Marah",
-          "confidence": 0.9826081395149231,
+          "confidence": 0.8882051110267639,
           "status": "Correct"
         },
         {
-          "filename": "BISINDO_Marah_005.mp4",
+          "filename": "BISINDO_Marah_003.mp4",
           "predicted": "Marah",
-          "confidence": 0.8468136787414551,
+          "confidence": 0.9189894199371338,
+          "status": "Correct"
+        },
+        {
+          "filename": "BISINDO_Marah_004.mp4",
+          "predicted": "Marah",
+          "confidence": 0.9012793302536011,
           "status": "Correct"
         }
       ],
       "incorrect_videos": [
         {
-          "filename": "BISINDO_Marah_002.mp4",
-          "predicted": "Marah",
-          "confidence": 0.48579493165016174,
+          "filename": "BISINDO_Marah_001.mp4",
+          "predicted": "Halo",
+          "confidence": 0.9920877814292908,
           "status": "Wrong"
         },
         {
-          "filename": "BISINDO_Marah_003.mp4",
+          "filename": "BISINDO_Marah_005.mp4",
           "predicted": "Marah",
-          "confidence": 0.7501104474067688,
-          "status": "Wrong"
-        },
-        {
-          "filename": "BISINDO_Marah_004.mp4",
-          "predicted": "Marah",
-          "confidence": 0.7183445692062378,
+          "confidence": 0.7028698325157166,
           "status": "Wrong"
         }
       ]
@@ -769,31 +771,31 @@
         {
           "filename": "BISINDO_Melihat_001.mp4",
           "predicted": "Melihat",
-          "confidence": 0.9610196352005005,
+          "confidence": 0.9979990124702454,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Melihat_002.mp4",
           "predicted": "Melihat",
-          "confidence": 0.953088641166687,
+          "confidence": 0.9976826906204224,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Melihat_003.mp4",
           "predicted": "Melihat",
-          "confidence": 0.96270751953125,
+          "confidence": 0.9982086420059204,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Melihat_004.mp4",
           "predicted": "Melihat",
-          "confidence": 0.958238959312439,
+          "confidence": 0.9984323382377625,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Melihat_005.mp4",
           "predicted": "Melihat",
-          "confidence": 0.962252140045166,
+          "confidence": 0.9979327917098999,
           "status": "Correct"
         }
       ],
@@ -805,31 +807,31 @@
         {
           "filename": "BISINDO_Membaca_001.mp4",
           "predicted": "Membaca",
-          "confidence": 0.9879280924797058,
+          "confidence": 0.921863853931427,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Membaca_002.mp4",
           "predicted": "Membaca",
-          "confidence": 0.9767648577690125,
+          "confidence": 0.9543622136116028,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Membaca_003.mp4",
           "predicted": "Membaca",
-          "confidence": 0.9793217778205872,
+          "confidence": 0.9896697402000427,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Membaca_004.mp4",
           "predicted": "Membaca",
-          "confidence": 0.9853644967079163,
+          "confidence": 0.9649996757507324,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Membaca_005.mp4",
           "predicted": "Membaca",
-          "confidence": 0.9690508246421814,
+          "confidence": 0.9568979740142822,
           "status": "Correct"
         }
       ],
@@ -837,39 +839,39 @@
     },
     "Menulis": {
       "total_videos": 5,
-      "correct_videos": [
+      "correct_videos": [],
+      "incorrect_videos": [
         {
           "filename": "BISINDO_Menulis_001.mp4",
-          "predicted": "Menulis",
-          "confidence": 0.9904870390892029,
-          "status": "Correct"
+          "predicted": "Terima Kasih",
+          "confidence": 0.9718711972236633,
+          "status": "Wrong"
         },
         {
           "filename": "BISINDO_Menulis_002.mp4",
-          "predicted": "Menulis",
-          "confidence": 0.9989905953407288,
-          "status": "Correct"
+          "predicted": "Terima Kasih",
+          "confidence": 0.9123964905738831,
+          "status": "Wrong"
         },
         {
           "filename": "BISINDO_Menulis_003.mp4",
-          "predicted": "Menulis",
-          "confidence": 0.998332679271698,
-          "status": "Correct"
+          "predicted": "Terima Kasih",
+          "confidence": 0.971096932888031,
+          "status": "Wrong"
         },
         {
           "filename": "BISINDO_Menulis_004.mp4",
-          "predicted": "Menulis",
-          "confidence": 0.9991592168807983,
-          "status": "Correct"
+          "predicted": "Terima Kasih",
+          "confidence": 0.6642259955406189,
+          "status": "Wrong"
         },
         {
           "filename": "BISINDO_Menulis_005.mp4",
-          "predicted": "Menulis",
-          "confidence": 0.9993246793746948,
-          "status": "Correct"
+          "predicted": "Terima Kasih",
+          "confidence": 0.6797910332679749,
+          "status": "Wrong"
         }
-      ],
-      "incorrect_videos": []
+      ]
     },
     "Mereka": {
       "total_videos": 5,
@@ -877,31 +879,31 @@
         {
           "filename": "BISINDO_Mereka_001.mp4",
           "predicted": "Mereka",
-          "confidence": 0.999884843826294,
+          "confidence": 0.998857855796814,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Mereka_002.mp4",
           "predicted": "Mereka",
-          "confidence": 0.9993237257003784,
+          "confidence": 0.9988051652908325,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Mereka_003.mp4",
           "predicted": "Mereka",
-          "confidence": 0.9985033273696899,
+          "confidence": 0.9978663325309753,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Mereka_004.mp4",
           "predicted": "Mereka",
-          "confidence": 0.9999254941940308,
+          "confidence": 0.9991194605827332,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Mereka_005.mp4",
           "predicted": "Mereka",
-          "confidence": 0.9998823404312134,
+          "confidence": 0.9988527297973633,
           "status": "Correct"
         }
       ],
@@ -911,107 +913,108 @@
       "total_videos": 5,
       "correct_videos": [
         {
-          "filename": "BISINDO_Minum_001.mp4",
-          "predicted": "Minum",
-          "confidence": 0.9737007021903992,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Minum_002.mp4",
-          "predicted": "Minum",
-          "confidence": 0.9847080707550049,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Minum_003.mp4",
-          "predicted": "Minum",
-          "confidence": 0.9829565286636353,
-          "status": "Correct"
-        },
-        {
           "filename": "BISINDO_Minum_004.mp4",
           "predicted": "Minum",
-          "confidence": 0.9922162294387817,
+          "confidence": 0.8784415125846863,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Minum_005.mp4",
           "predicted": "Minum",
-          "confidence": 0.9836216568946838,
-          "status": "Correct"
-        }
-      ],
-      "incorrect_videos": []
-    },
-    "Pendek": {
-      "total_videos": 5,
-      "correct_videos": [
-        {
-          "filename": "BISINDO_Pendek_001.mp4",
-          "predicted": "Pendek",
-          "confidence": 0.9838824272155762,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Pendek_002.mp4",
-          "predicted": "Pendek",
-          "confidence": 0.9983945488929749,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Pendek_003.mp4",
-          "predicted": "Pendek",
-          "confidence": 0.9871339201927185,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Pendek_004.mp4",
-          "predicted": "Pendek",
-          "confidence": 0.9976257681846619,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Pendek_005.mp4",
-          "predicted": "Pendek",
-          "confidence": 0.995557963848114,
-          "status": "Correct"
-        }
-      ],
-      "incorrect_videos": []
-    },
-    "Ramah": {
-      "total_videos": 5,
-      "correct_videos": [
-        {
-          "filename": "BISINDO_Ramah_001.mp4",
-          "predicted": "Ramah",
-          "confidence": 0.9916055202484131,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Ramah_002.mp4",
-          "predicted": "Ramah",
-          "confidence": 0.9966403245925903,
-          "status": "Correct"
-        },
-        {
-          "filename": "BISINDO_Ramah_005.mp4",
-          "predicted": "Ramah",
-          "confidence": 0.9752113223075867,
+          "confidence": 0.9576935172080994,
           "status": "Correct"
         }
       ],
       "incorrect_videos": [
         {
-          "filename": "BISINDO_Ramah_003.mp4",
+          "filename": "BISINDO_Minum_001.mp4",
+          "predicted": "Minum",
+          "confidence": 0.7487470507621765,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Minum_002.mp4",
+          "predicted": "Halo",
+          "confidence": 0.5481309294700623,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Minum_003.mp4",
+          "predicted": "Minum",
+          "confidence": 0.6534927487373352,
+          "status": "Wrong"
+        }
+      ]
+    },
+    "Pendek": {
+      "total_videos": 5,
+      "correct_videos": [],
+      "incorrect_videos": [
+        {
+          "filename": "BISINDO_Pendek_001.mp4",
+          "predicted": "Tinggi",
+          "confidence": 0.9693180322647095,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Pendek_002.mp4",
+          "predicted": "Tinggi",
+          "confidence": 0.9689152836799622,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Pendek_003.mp4",
+          "predicted": "Tinggi",
+          "confidence": 0.9493780732154846,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Pendek_004.mp4",
+          "predicted": "Tinggi",
+          "confidence": 0.9890633225440979,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Pendek_005.mp4",
+          "predicted": "Tinggi",
+          "confidence": 0.8174978494644165,
+          "status": "Wrong"
+        }
+      ]
+    },
+    "Ramah": {
+      "total_videos": 5,
+      "correct_videos": [
+        {
+          "filename": "BISINDO_Ramah_002.mp4",
+          "predicted": "Ramah",
+          "confidence": 0.9809516668319702,
+          "status": "Correct"
+        },
+        {
+          "filename": "BISINDO_Ramah_005.mp4",
+          "predicted": "Ramah",
+          "confidence": 0.9984097480773926,
+          "status": "Correct"
+        }
+      ],
+      "incorrect_videos": [
+        {
+          "filename": "BISINDO_Ramah_001.mp4",
           "predicted": "Terima Kasih",
-          "confidence": 0.667496919631958,
+          "confidence": 0.5904240608215332,
+          "status": "Wrong"
+        },
+        {
+          "filename": "BISINDO_Ramah_003.mp4",
+          "predicted": "Ramah",
+          "confidence": 0.5896490216255188,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Ramah_004.mp4",
           "predicted": "Ramah",
-          "confidence": 0.5417928099632263,
+          "confidence": 0.6236216425895691,
           "status": "Wrong"
         }
       ]
@@ -1020,37 +1023,38 @@
       "total_videos": 5,
       "correct_videos": [
         {
-          "filename": "BISINDO_Sabar_001.mp4",
-          "predicted": "Sabar",
-          "confidence": 0.9982715845108032,
-          "status": "Correct"
-        },
-        {
           "filename": "BISINDO_Sabar_002.mp4",
           "predicted": "Sabar",
-          "confidence": 0.9968703389167786,
+          "confidence": 0.9986370205879211,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Sabar_003.mp4",
           "predicted": "Sabar",
-          "confidence": 0.9987340569496155,
+          "confidence": 0.9984306693077087,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Sabar_004.mp4",
           "predicted": "Sabar",
-          "confidence": 0.9985536932945251,
+          "confidence": 0.9984068274497986,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Sabar_005.mp4",
           "predicted": "Sabar",
-          "confidence": 0.9984897375106812,
+          "confidence": 0.9974338412284851,
           "status": "Correct"
         }
       ],
-      "incorrect_videos": []
+      "incorrect_videos": [
+        {
+          "filename": "BISINDO_Sabar_001.mp4",
+          "predicted": "Sabar",
+          "confidence": 0.636184811592102,
+          "status": "Wrong"
+        }
+      ]
     },
     "Saya": {
       "total_videos": 5,
@@ -1058,73 +1062,71 @@
         {
           "filename": "BISINDO_Saya_001.mp4",
           "predicted": "Saya",
-          "confidence": 0.949341893196106,
+          "confidence": 0.9962877035140991,
+          "status": "Correct"
+        },
+        {
+          "filename": "BISINDO_Saya_002.mp4",
+          "predicted": "Saya",
+          "confidence": 0.9956595301628113,
+          "status": "Correct"
+        },
+        {
+          "filename": "BISINDO_Saya_003.mp4",
+          "predicted": "Saya",
+          "confidence": 0.9959022402763367,
+          "status": "Correct"
+        },
+        {
+          "filename": "BISINDO_Saya_004.mp4",
+          "predicted": "Saya",
+          "confidence": 0.9959070682525635,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Saya_005.mp4",
           "predicted": "Saya",
-          "confidence": 0.835850179195404,
+          "confidence": 0.9967986345291138,
           "status": "Correct"
         }
       ],
-      "incorrect_videos": [
-        {
-          "filename": "BISINDO_Saya_002.mp4",
-          "predicted": "Kami",
-          "confidence": 0.8159128427505493,
-          "status": "Wrong"
-        },
-        {
-          "filename": "BISINDO_Saya_003.mp4",
-          "predicted": "Kami",
-          "confidence": 0.9555858969688416,
-          "status": "Wrong"
-        },
-        {
-          "filename": "BISINDO_Saya_004.mp4",
-          "predicted": "Kami",
-          "confidence": 0.7572382688522339,
-          "status": "Wrong"
-        }
-      ]
+      "incorrect_videos": []
     },
     "Sedih": {
       "total_videos": 5,
       "correct_videos": [
         {
+          "filename": "BISINDO_Sedih_001.mp4",
+          "predicted": "Sedih",
+          "confidence": 0.9602060914039612,
+          "status": "Correct"
+        },
+        {
           "filename": "BISINDO_Sedih_002.mp4",
           "predicted": "Sedih",
-          "confidence": 0.9792550206184387,
+          "confidence": 0.9970353841781616,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Sedih_003.mp4",
           "predicted": "Sedih",
-          "confidence": 0.8426188826560974,
+          "confidence": 0.9976751208305359,
+          "status": "Correct"
+        },
+        {
+          "filename": "BISINDO_Sedih_004.mp4",
+          "predicted": "Sedih",
+          "confidence": 0.9983554482460022,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Sedih_005.mp4",
           "predicted": "Sedih",
-          "confidence": 0.9877886176109314,
+          "confidence": 0.9992351531982422,
           "status": "Correct"
         }
       ],
-      "incorrect_videos": [
-        {
-          "filename": "BISINDO_Sedih_001.mp4",
-          "predicted": "Berapa",
-          "confidence": 0.9555550813674927,
-          "status": "Wrong"
-        },
-        {
-          "filename": "BISINDO_Sedih_004.mp4",
-          "predicted": "Sedih",
-          "confidence": 0.7453482151031494,
-          "status": "Wrong"
-        }
-      ]
+      "incorrect_videos": []
     },
     "Selamat Malam": {
       "total_videos": 5,
@@ -1132,68 +1134,69 @@
       "incorrect_videos": [
         {
           "filename": "BISINDO_Selamat Malam_001.mp4",
-          "predicted": "Makan",
-          "confidence": 0.9348233938217163,
+          "predicted": "Melihat",
+          "confidence": 0.6228623390197754,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Malam_002.mp4",
           "predicted": "Makan",
-          "confidence": 0.5477631688117981,
+          "confidence": 0.696243941783905,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Malam_003.mp4",
           "predicted": "Makan",
-          "confidence": 0.6298391819000244,
+          "confidence": 0.869734525680542,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Malam_004.mp4",
           "predicted": "Makan",
-          "confidence": 0.634908139705658,
+          "confidence": 0.8907889723777771,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Malam_005.mp4",
-          "predicted": "Kapan",
-          "confidence": 0.5909357666969299,
+          "predicted": "Selamat Siang",
+          "confidence": 0.5932855606079102,
           "status": "Wrong"
         }
       ]
     },
     "Selamat Pagi": {
       "total_videos": 5,
-      "correct_videos": [],
-      "incorrect_videos": [
+      "correct_videos": [
         {
           "filename": "BISINDO_Selamat Pagi_001.mp4",
-          "predicted": "Berapa",
-          "confidence": 0.6714510917663574,
-          "status": "Wrong"
-        },
+          "predicted": "Selamat Pagi",
+          "confidence": 0.8113857507705688,
+          "status": "Correct"
+        }
+      ],
+      "incorrect_videos": [
         {
           "filename": "BISINDO_Selamat Pagi_002.mp4",
-          "predicted": "Berapa",
-          "confidence": 0.7899857759475708,
+          "predicted": "Selamat Pagi",
+          "confidence": 0.6813099384307861,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Pagi_003.mp4",
           "predicted": "Berapa",
-          "confidence": 0.900612473487854,
+          "confidence": 0.9725852608680725,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Pagi_004.mp4",
           "predicted": "Berapa",
-          "confidence": 0.98917156457901,
+          "confidence": 0.2901498079299927,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Pagi_005.mp4",
-          "predicted": "Berapa",
-          "confidence": 0.7215803265571594,
+          "predicted": "Selamat Pagi",
+          "confidence": 0.7608771920204163,
           "status": "Wrong"
         }
       ]
@@ -1205,31 +1208,31 @@
         {
           "filename": "BISINDO_Selamat Siang_001.mp4",
           "predicted": "Makan",
-          "confidence": 0.980930745601654,
+          "confidence": 0.9897812604904175,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Siang_002.mp4",
           "predicted": "Makan",
-          "confidence": 0.8707848787307739,
+          "confidence": 0.992139995098114,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Siang_003.mp4",
           "predicted": "Berapa",
-          "confidence": 0.8871304392814636,
+          "confidence": 0.49478793144226074,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Siang_004.mp4",
-          "predicted": "Makan",
-          "confidence": 0.9141256213188171,
+          "predicted": "Kalian",
+          "confidence": 0.3844395577907562,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Siang_005.mp4",
-          "predicted": "Makan",
-          "confidence": 0.5883616805076599,
+          "predicted": "Berapa",
+          "confidence": 0.7110262513160706,
           "status": "Wrong"
         }
       ]
@@ -1240,71 +1243,71 @@
       "incorrect_videos": [
         {
           "filename": "BISINDO_Selamat Sore_001.mp4",
-          "predicted": "Makan",
-          "confidence": 0.3436245620250702,
+          "predicted": "Melihat",
+          "confidence": 0.35717183351516724,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Sore_002.mp4",
           "predicted": "Berapa",
-          "confidence": 0.9318879246711731,
+          "confidence": 0.9568691849708557,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Sore_003.mp4",
           "predicted": "Makan",
-          "confidence": 0.917198121547699,
+          "confidence": 0.9985554814338684,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Sore_004.mp4",
-          "predicted": "Berapa",
-          "confidence": 0.7676112055778503,
+          "predicted": "Makan",
+          "confidence": 0.7063170075416565,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Selamat Sore_005.mp4",
-          "predicted": "Berapa",
-          "confidence": 0.6787784099578857,
+          "predicted": "Makan",
+          "confidence": 0.5583771467208862,
           "status": "Wrong"
         }
       ]
     },
     "Senang": {
       "total_videos": 5,
-      "correct_videos": [
+      "correct_videos": [],
+      "incorrect_videos": [
         {
           "filename": "BISINDO_Senang_001.mp4",
-          "predicted": "Senang",
-          "confidence": 0.9995095729827881,
-          "status": "Correct"
+          "predicted": "Baik",
+          "confidence": 0.9575384855270386,
+          "status": "Wrong"
         },
         {
           "filename": "BISINDO_Senang_002.mp4",
-          "predicted": "Senang",
-          "confidence": 0.9928440451622009,
-          "status": "Correct"
+          "predicted": "Baik",
+          "confidence": 0.9849260449409485,
+          "status": "Wrong"
         },
         {
           "filename": "BISINDO_Senang_003.mp4",
-          "predicted": "Senang",
-          "confidence": 0.999016284942627,
-          "status": "Correct"
+          "predicted": "Baik",
+          "confidence": 0.7779632806777954,
+          "status": "Wrong"
         },
         {
           "filename": "BISINDO_Senang_004.mp4",
-          "predicted": "Senang",
-          "confidence": 0.9992501139640808,
-          "status": "Correct"
+          "predicted": "Baik",
+          "confidence": 0.9739820957183838,
+          "status": "Wrong"
         },
         {
           "filename": "BISINDO_Senang_005.mp4",
-          "predicted": "Senang",
-          "confidence": 0.9994828701019287,
-          "status": "Correct"
+          "predicted": "Baik",
+          "confidence": 0.9886271357536316,
+          "status": "Wrong"
         }
-      ],
-      "incorrect_videos": []
+      ]
     },
     "Siapa": {
       "total_videos": 5,
@@ -1312,31 +1315,31 @@
         {
           "filename": "BISINDO_Siapa_001.mp4",
           "predicted": "Siapa",
-          "confidence": 0.9994656443595886,
+          "confidence": 0.9992166757583618,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Siapa_002.mp4",
           "predicted": "Siapa",
-          "confidence": 0.9992997646331787,
+          "confidence": 0.9979008436203003,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Siapa_003.mp4",
           "predicted": "Siapa",
-          "confidence": 0.9985741376876831,
+          "confidence": 0.9979972243309021,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Siapa_004.mp4",
           "predicted": "Siapa",
-          "confidence": 0.9982465505599976,
+          "confidence": 0.9973949193954468,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Siapa_005.mp4",
           "predicted": "Siapa",
-          "confidence": 0.998620867729187,
+          "confidence": 0.9972984194755554,
           "status": "Correct"
         }
       ],
@@ -1348,31 +1351,31 @@
         {
           "filename": "BISINDO_Terima Kasih_001.mp4",
           "predicted": "Terima Kasih",
-          "confidence": 0.9011871814727783,
+          "confidence": 0.9922856092453003,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Terima Kasih_002.mp4",
           "predicted": "Terima Kasih",
-          "confidence": 0.9716975688934326,
+          "confidence": 0.9466934204101562,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Terima Kasih_003.mp4",
           "predicted": "Terima Kasih",
-          "confidence": 0.8816592693328857,
+          "confidence": 0.9175229668617249,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Terima Kasih_004.mp4",
           "predicted": "Terima Kasih",
-          "confidence": 0.9746066331863403,
+          "confidence": 0.853009819984436,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Terima Kasih_005.mp4",
           "predicted": "Terima Kasih",
-          "confidence": 0.9718732237815857,
+          "confidence": 0.8673914670944214,
           "status": "Correct"
         }
       ],
@@ -1384,31 +1387,31 @@
         {
           "filename": "BISINDO_Tidur_001.mp4",
           "predicted": "Tidur",
-          "confidence": 0.9842151999473572,
+          "confidence": 0.9955728054046631,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Tidur_002.mp4",
           "predicted": "Tidur",
-          "confidence": 0.9770002365112305,
+          "confidence": 0.9881995916366577,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Tidur_003.mp4",
           "predicted": "Tidur",
-          "confidence": 0.978172779083252,
+          "confidence": 0.9951903820037842,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Tidur_004.mp4",
           "predicted": "Tidur",
-          "confidence": 0.9844560623168945,
+          "confidence": 0.9882489442825317,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Tidur_005.mp4",
           "predicted": "Tidur",
-          "confidence": 0.9723632335662842,
+          "confidence": 0.9452986121177673,
           "status": "Correct"
         }
       ],
@@ -1420,13 +1423,19 @@
         {
           "filename": "BISINDO_Tinggi_001.mp4",
           "predicted": "Tinggi",
-          "confidence": 0.9583758115768433,
+          "confidence": 0.9293522834777832,
           "status": "Correct"
         },
         {
           "filename": "BISINDO_Tinggi_004.mp4",
           "predicted": "Tinggi",
-          "confidence": 0.9979447722434998,
+          "confidence": 0.998245120048523,
+          "status": "Correct"
+        },
+        {
+          "filename": "BISINDO_Tinggi_005.mp4",
+          "predicted": "Tinggi",
+          "confidence": 0.9960838556289673,
           "status": "Correct"
         }
       ],
@@ -1434,19 +1443,13 @@
         {
           "filename": "BISINDO_Tinggi_002.mp4",
           "predicted": "Sedih",
-          "confidence": 0.976033091545105,
+          "confidence": 0.9973631501197815,
           "status": "Wrong"
         },
         {
           "filename": "BISINDO_Tinggi_003.mp4",
-          "predicted": "Pendek",
-          "confidence": 0.981272280216217,
-          "status": "Wrong"
-        },
-        {
-          "filename": "BISINDO_Tinggi_005.mp4",
-          "predicted": "Pendek",
-          "confidence": 0.6190603375434875,
+          "predicted": "Tinggi",
+          "confidence": 0.6368135809898376,
           "status": "Wrong"
         }
       ]

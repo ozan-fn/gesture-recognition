@@ -75,9 +75,11 @@ def extract_keypoints(results, image_shape, normalizer):
 
     # Left Hand: 21 landmarks (42 features)
     lh = np.zeros(21 * 2)
+    left_wrist_pos = None
     if results.left_hand_landmarks:
         w_lm = results.left_hand_landmarks.landmark[0]
         wrist = np.array([w_lm.x * image_shape[1], w_lm.y * image_shape[0]])
+        left_wrist_pos = wrist.copy()
         m_lm = results.left_hand_landmarks.landmark[9]
         mcp = np.array([m_lm.x * image_shape[1], m_lm.y * image_shape[0]])
         hand_scale = np.linalg.norm(wrist - mcp)
@@ -94,9 +96,11 @@ def extract_keypoints(results, image_shape, normalizer):
 
     # Right Hand: 21 landmarks (42 features)
     rh = np.zeros(21 * 2)
+    right_wrist_pos = None
     if results.right_hand_landmarks:
         w_lm = results.right_hand_landmarks.landmark[0]
         wrist = np.array([w_lm.x * image_shape[1], w_lm.y * image_shape[0]])
+        right_wrist_pos = wrist.copy()
         m_lm = results.right_hand_landmarks.landmark[9]
         mcp = np.array([m_lm.x * image_shape[1], m_lm.y * image_shape[0]])
         hand_scale = np.linalg.norm(wrist - mcp)
@@ -111,7 +115,60 @@ def extract_keypoints(results, image_shape, normalizer):
         rh_local = np.array(rh_local).flatten()
         rh = np.concatenate([rh_wrist_global, rh_local])
 
-    return np.concatenate([pose, lh, rh]), ref
+    # === NEW FEATURES (matching 1_extract_features.py) ===
+
+    # 1. Relative Distances (4 features)
+    distances = np.zeros(4)
+    safe_scale = scale if scale is not None and scale > 0 else 1.0
+
+    # Hand-to-hand distance
+    if left_wrist_pos is not None and right_wrist_pos is not None:
+        distances[0] = np.linalg.norm(left_wrist_pos - right_wrist_pos) / safe_scale
+
+    # Hand-to-face distances (using shoulder midpoint as face proxy)
+    if left_wrist_pos is not None:
+        distances[1] = np.linalg.norm(left_wrist_pos - ref) / safe_scale
+    if right_wrist_pos is not None:
+        distances[2] = np.linalg.norm(right_wrist_pos - ref) / safe_scale
+
+    # Hand width ratio (left to right)
+    if left_wrist_pos is not None and right_wrist_pos is not None:
+        distances[3] = abs(left_wrist_pos[0] - right_wrist_pos[0]) / safe_scale
+
+    # 2. Elbow Angles (2 features)
+    angles = np.zeros(2)
+
+    if results.pose_landmarks:
+        # Left elbow angle
+        l_shoulder = results.pose_landmarks.landmark[11]
+        l_elbow = results.pose_landmarks.landmark[13]
+        l_wrist = results.pose_landmarks.landmark[15]
+
+        ls = np.array([l_shoulder.x * image_shape[1], l_shoulder.y * image_shape[0]])
+        le = np.array([l_elbow.x * image_shape[1], l_elbow.y * image_shape[0]])
+        lw = np.array([l_wrist.x * image_shape[1], l_wrist.y * image_shape[0]])
+
+        v1 = ls - le
+        v2 = lw - le
+        cos_angle = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2) + 1e-6)
+        angles[0] = np.arccos(np.clip(cos_angle, -1.0, 1.0)) / np.pi
+
+        # Right elbow angle
+        r_shoulder = results.pose_landmarks.landmark[12]
+        r_elbow = results.pose_landmarks.landmark[14]
+        r_wrist = results.pose_landmarks.landmark[16]
+
+        rs = np.array([r_shoulder.x * image_shape[1], r_shoulder.y * image_shape[0]])
+        re = np.array([r_elbow.x * image_shape[1], r_elbow.y * image_shape[0]])
+        rw = np.array([r_wrist.x * image_shape[1], r_wrist.y * image_shape[0]])
+
+        v1 = rs - re
+        v2 = rw - re
+        cos_angle = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2) + 1e-6)
+        angles[1] = np.arccos(np.clip(cos_angle, -1.0, 1.0)) / np.pi
+
+    # Combine: 96 base + 4 distance + 2 angle = 102 features (velocity added separately)
+    return np.concatenate([pose, lh, rh, distances, angles]), ref
 
 # ── UI Drawing ────────────────────────────────────────────────────────────
 
@@ -239,7 +296,9 @@ def process_frame(frame, holistic, normalizer, model, class_names, scaler, state
 
     elif state == STATE_RECORDING:
         keypoints, ref = extract_keypoints(results, frame.shape, normalizer)
-        state_dict['sequence_buffer'].append(keypoints)
+        # Pad with zeros for velocity features (4 features)
+        keypoints_padded = np.concatenate([keypoints, np.zeros(4)])
+        state_dict['sequence_buffer'].append(keypoints_padded)
         if len(state_dict['sequence_buffer']) == SEQUENCE_LENGTH:
             state_dict['state'] = STATE_PREDICTING
 

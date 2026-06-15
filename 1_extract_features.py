@@ -297,6 +297,15 @@ def main():
     print("Model Complexity: 0 (fastest)")
     print()
 
+    # Pre-download model once to avoid redundant downloads in each subprocess
+    print("Pre-downloading MediaPipe model...")
+    try:
+        with mp_holistic.Holistic(static_image_mode=False, model_complexity=0, enable_segmentation=False):
+            pass  # Just download the model
+        print("Model downloaded successfully.\n")
+    except Exception as e:
+        print(f"Warning: Model pre-download failed: {e}\n")
+
     # Collect all video tasks
     all_tasks = []
     for class_name in classes:
@@ -313,12 +322,16 @@ def main():
     print(f"Total videos to process: {len(all_tasks)}")
     print("Starting parallel extraction...\n")
 
-    # Execute parallel processing using all CPU cores
+    # Execute parallel processing using limited CPU cores
+    # Limit to 4 workers to avoid redundant model downloads
+    max_workers = min(4, multiprocessing.cpu_count())
+    print(f"Using {max_workers} workers\n")
+
     total_processed = 0
     total_skipped = 0
     total_errors = 0
 
-    with ProcessPoolExecutor(max_workers=None) as executor:
+    with ProcessPoolExecutor(max_workers=max_workers) as executor:
         # Submit all tasks
         futures = {executor.submit(process_single_video, task): task for task in all_tasks}
 

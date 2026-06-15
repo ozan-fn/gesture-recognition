@@ -2,6 +2,8 @@ import os
 import cv2
 import numpy as np
 from tqdm import tqdm
+import matplotlib
+matplotlib.use('Agg')
 import mediapipe as mp
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import multiprocessing

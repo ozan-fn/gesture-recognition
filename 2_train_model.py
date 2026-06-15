@@ -7,6 +7,8 @@ from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLRO
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelBinarizer, StandardScaler
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_recall_fscore_support
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns  # type: ignore
 import pickle

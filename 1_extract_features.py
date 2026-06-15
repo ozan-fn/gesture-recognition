@@ -313,16 +313,12 @@ def main():
     print(f"Total videos to process: {len(all_tasks)}")
     print("Starting parallel extraction...\n")
 
-    # Execute parallel processing using limited CPU cores
-    # Limit to 4 workers to avoid redundant model downloads
-    max_workers = min(4, multiprocessing.cpu_count())
-    print(f"Using {max_workers} workers\n")
-
+    # Execute parallel processing using all CPU cores
     total_processed = 0
     total_skipped = 0
     total_errors = 0
 
-    with ProcessPoolExecutor(max_workers=max_workers) as executor:
+    with ProcessPoolExecutor(max_workers=None) as executor:
         # Submit all tasks
         futures = {executor.submit(process_single_video, task): task for task in all_tasks}
 

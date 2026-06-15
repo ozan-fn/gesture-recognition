@@ -1,4 +1,5 @@
 import os
+os.environ.pop('MPLBACKEND', None)
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import Sequential  # type: ignore

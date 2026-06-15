@@ -182,7 +182,7 @@ def test_video(video_path, expected_label, model, scaler, class_names, holistic)
 
 def main():
     print(Colors.BOLD + "="*70 + Colors.ENDC)
-    print(Colors.HEADER + Colors.BOLD + "BISINDO VIDEO TESTING - Find Best Videos for Each Word" + Colors.ENDC)
+    print(Colors.HEADER + Colors.BOLD + "BISINDO VIDEO TESTING - Test 5 Videos Per Word, Keep The Best" + Colors.ENDC)
     print(Colors.BOLD + "="*70 + Colors.ENDC)
     print()
 
@@ -235,13 +235,13 @@ def main():
         for word_idx, word in enumerate(word_folders, 1):
             word_path = os.path.join(raw_video_path, word)
             videos = [f for f in os.listdir(word_path)
-                     if f.endswith(('.mp4', '.avi', '.mov'))]
+                     if f.endswith(('.mp4', '.avi', '.mov'))][:5]  # Limit to 5 videos per word
 
             if not videos:
                 print(Colors.YELLOW + f"[{word_idx}/{len(word_folders)}] {word}: No videos found - SKIP" + Colors.ENDC)
                 continue
 
-            print(Colors.BLUE + Colors.BOLD + f"[{word_idx}/{len(word_folders)}] {word}: Testing {len(videos)} video(s)..." + Colors.ENDC)
+            print(Colors.BLUE + Colors.BOLD + f"[{word_idx}/{len(word_folders)}] {word}: Testing {len(videos)} video(s) (max 5)..." + Colors.ENDC)
 
             word_results = {
                 'total_videos': len(videos),

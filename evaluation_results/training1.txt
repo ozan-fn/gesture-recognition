@@ -1,0 +1,12 @@
+Processing All Videos: 100% 2000/2000 [1:11:21<00:00,  2.14s/it]
+
+============================================================
+Feature extraction complete!
+Processed: 2000 videos
+Skipped (already exists): 0 videos
+Errors: 0 videos
+Output directory: MP_Data
+Features per frame: 106 (96 base + 4 distance + 2 angle + 4 velocity)
+============================================================
+
+1 jam 12 menit

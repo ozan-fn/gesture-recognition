@@ -6,14 +6,11 @@ import mediapipe as mp
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import multiprocessing
 
-os.environ.setdefault('QT_QPA_PLATFORM', 'xcb')
-
 # === CONFIGURATION ===
 RAW_VIDEO_DIR = 'Dataset/raw_video'
 OUTPUT_DIR    = 'MP_Data'
 SEQUENCE_LENGTH = 30
 MP_MIN_WIDTH = 640
-
 # We only track critical pose points: shoulders (11, 12), elbows (13, 14), wrists (15, 16)
 # This reduces dimensionality and avoids face/leg noise.
 POSE_LANDMARKS_IDX = [11, 12, 13, 14, 15, 16]
@@ -25,19 +22,19 @@ def get_ref_and_scale(results, image_shape):
     if results.pose_landmarks:
         left  = results.pose_landmarks.landmark[mp_holistic.PoseLandmark.LEFT_SHOULDER]
         right = results.pose_landmarks.landmark[mp_holistic.PoseLandmark.RIGHT_SHOULDER]
-        
+
         lx, ly = left.x * image_shape[1], left.y * image_shape[0]
         rx, ry = right.x * image_shape[1], right.y * image_shape[0]
-        
+
         mid_x = (lx + rx) / 2
         mid_y = (ly + ry) / 2
-        
+
         dist = np.sqrt((lx - rx)**2 + (ly - ry)**2)
         if dist < 1.0:
             dist = 1.0
-            
+
         return np.array([mid_x, mid_y]), dist
-        
+
     return np.array([image_shape[1] / 2, image_shape[0] / 2]), 100.0
 
 def extract_keypoints(results, image_shape, prev_ref=None, prev_scale=None, prev_keypoints=None):
@@ -73,7 +70,7 @@ def extract_keypoints(results, image_shape, prev_ref=None, prev_scale=None, prev
         w_lm = results.left_hand_landmarks.landmark[0]
         wrist = np.array([w_lm.x * image_shape[1], w_lm.y * image_shape[0]])
         left_wrist_pos = wrist.copy()
-        
+
         # Hand scale (distance between Wrist and Middle Finger root)
         m_lm = results.left_hand_landmarks.landmark[9]
         mcp = np.array([m_lm.x * image_shape[1], m_lm.y * image_shape[0]])
@@ -83,7 +80,7 @@ def extract_keypoints(results, image_shape, prev_ref=None, prev_scale=None, prev
 
         # Global position of wrist relative to shoulders
         lh_wrist_global = (wrist - ref) / scale
-        
+
         # Local shape of other joints relative to wrist
         lh_local = []
         for lm in results.left_hand_landmarks.landmark[1:]:
@@ -99,7 +96,7 @@ def extract_keypoints(results, image_shape, prev_ref=None, prev_scale=None, prev
         w_lm = results.right_hand_landmarks.landmark[0]
         wrist = np.array([w_lm.x * image_shape[1], w_lm.y * image_shape[0]])
         right_wrist_pos = wrist.copy()
-        
+
         m_lm = results.right_hand_landmarks.landmark[9]
         mcp = np.array([m_lm.x * image_shape[1], m_lm.y * image_shape[0]])
         hand_scale = np.linalg.norm(wrist - mcp)
@@ -107,7 +104,7 @@ def extract_keypoints(results, image_shape, prev_ref=None, prev_scale=None, prev
             hand_scale = 1.0
 
         rh_wrist_global = (wrist - ref) / scale
-        
+
         rh_local = []
         for lm in results.right_hand_landmarks.landmark[1:]:
             pt = np.array([lm.x * image_shape[1], lm.y * image_shape[0]])
@@ -116,65 +113,65 @@ def extract_keypoints(results, image_shape, prev_ref=None, prev_scale=None, prev
         rh = np.concatenate([rh_wrist_global, rh_local])
 
     # === NEW FEATURES ===
-    
+
     # 1. Relative Distances (4 features)
     distances = np.zeros(4)
-    
+
     # Safe scale value
     safe_scale = scale if scale is not None and scale > 0 else 1.0
-    
+
     # Hand-to-hand distance
     if left_wrist_pos is not None and right_wrist_pos is not None:
         distances[0] = np.linalg.norm(left_wrist_pos - right_wrist_pos) / safe_scale
-    
+
     # Hand-to-face distances (using shoulder midpoint as face proxy)
     if left_wrist_pos is not None:
         distances[1] = np.linalg.norm(left_wrist_pos - ref) / safe_scale
     if right_wrist_pos is not None:
         distances[2] = np.linalg.norm(right_wrist_pos - ref) / safe_scale
-    
+
     # Hand width ratio (left to right)
     if left_wrist_pos is not None and right_wrist_pos is not None:
         distances[3] = abs(left_wrist_pos[0] - right_wrist_pos[0]) / safe_scale
-    
+
     # 2. Elbow Angles (2 features)
     angles = np.zeros(2)
-    
+
     if results.pose_landmarks:
         # Left elbow angle
         l_shoulder = results.pose_landmarks.landmark[11]
         l_elbow = results.pose_landmarks.landmark[13]
         l_wrist = results.pose_landmarks.landmark[15]
-        
+
         ls = np.array([l_shoulder.x * image_shape[1], l_shoulder.y * image_shape[0]])
         le = np.array([l_elbow.x * image_shape[1], l_elbow.y * image_shape[0]])
         lw = np.array([l_wrist.x * image_shape[1], l_wrist.y * image_shape[0]])
-        
+
         v1 = ls - le
         v2 = lw - le
         cos_angle = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2) + 1e-6)
         angles[0] = np.arccos(np.clip(cos_angle, -1.0, 1.0)) / np.pi  # Normalize to [0, 1]
-        
+
         # Right elbow angle
         r_shoulder = results.pose_landmarks.landmark[12]
         r_elbow = results.pose_landmarks.landmark[14]
         r_wrist = results.pose_landmarks.landmark[16]
-        
+
         rs = np.array([r_shoulder.x * image_shape[1], r_shoulder.y * image_shape[0]])
         re = np.array([r_elbow.x * image_shape[1], r_elbow.y * image_shape[0]])
         rw = np.array([r_wrist.x * image_shape[1], r_wrist.y * image_shape[0]])
-        
+
         v1 = rs - re
         v2 = rw - re
         cos_angle = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2) + 1e-6)
         angles[1] = np.arccos(np.clip(cos_angle, -1.0, 1.0)) / np.pi
-    
+
     # Combine base features
     base_features = np.concatenate([pose, lh, rh, distances, angles])
-    
+
     # 3. Temporal Features (velocity) - will be computed later in sequence
     # For now, return base features and positions for velocity calculation
-    
+
     return base_features, ref, scale, left_wrist_pos, right_wrist_pos
 
 def sample_frames(total_frames, desired_count):
@@ -190,7 +187,7 @@ def process_video(video_path, holistic, class_name):
     keypoints_data = []
     ref_points = []
     wrist_positions = []  # Store wrist positions for velocity
-    
+
     prev_ref, prev_scale = None, None
 
     while True:
@@ -207,14 +204,14 @@ def process_video(video_path, holistic, class_name):
 
         rgb = cv2.cvtColor(mp_frame, cv2.COLOR_BGR2RGB)
         results = holistic.process(rgb)
-        
+
         kp, prev_ref, prev_scale, left_wrist, right_wrist = extract_keypoints(results, mp_frame.shape, prev_ref, prev_scale)
-        
+
         keypoints_data.append(kp)
         results_data.append(results)
         ref_points.append(prev_ref)
         wrist_positions.append((left_wrist, right_wrist))
-            
+
     cap.release()
 
     total_frames = len(keypoints_data)
@@ -230,58 +227,61 @@ def process_video(video_path, holistic, class_name):
     if len(hand_indices) >= 5:
         start_idx = hand_indices[0]
         end_idx   = hand_indices[-1]
-        
+
         keypoints_data = keypoints_data[start_idx:end_idx + 1]
         results_data   = results_data[start_idx:end_idx + 1]
         ref_points     = ref_points[start_idx:end_idx + 1]
         wrist_positions = wrist_positions[start_idx:end_idx + 1]
-        
+
         total_frames = len(keypoints_data)
+        print(f"  [Crop] {vid_name}: frames {start_idx}-{end_idx} (active: {len(hand_indices)})")
+    else:
+        print(f"  [Warn] {vid_name}: hands missing. No crop.")
 
     sampled_indices = sample_frames(total_frames, SEQUENCE_LENGTH)
 
     # Sample keypoints
     sequence = np.array([keypoints_data[i] for i in sampled_indices])
-    
+
     # Compute velocity features (temporal)
     velocities = np.zeros((SEQUENCE_LENGTH, 4))  # left_x, left_y, right_x, right_y
     for i in range(1, SEQUENCE_LENGTH):
         prev_idx = sampled_indices[i-1]
         curr_idx = sampled_indices[i]
-        
+
         prev_left, prev_right = wrist_positions[prev_idx]
         curr_left, curr_right = wrist_positions[curr_idx]
-        
+
         # Left hand velocity
         if prev_left is not None and curr_left is not None:
             velocities[i, 0:2] = (curr_left - prev_left) / (curr_idx - prev_idx + 1)
-        
+
         # Right hand velocity
         if prev_right is not None and curr_right is not None:
             velocities[i, 2:4] = (curr_right - prev_right) / (curr_idx - prev_idx + 1)
-    
+
     # Normalize velocities
     velocities = velocities / (ref_points[0][1] if ref_points[0][1] > 0 else 1.0)  # Scale by shoulder distance
-    
+
     # Concatenate spatial features with temporal features
     sequence_with_velocity = np.concatenate([sequence, velocities], axis=1)
-    
+
     return sequence_with_velocity
 
 # --- WORKER FUNCTION FOR PARALLEL PROCESSING ---
 def process_single_video(video_info):
     """Process a single video in a separate CPU core."""
     video_path, class_name, output_path = video_info
-    
+
     # Check if already exists (skip)
     if os.path.exists(output_path):
         return 'skipped'
-    
+
     try:
         # Initialize MediaPipe independently in each process
         with mp_holistic.Holistic(static_image_mode=False, model_complexity=0, enable_segmentation=False) as holistic:
             result = process_video(video_path, holistic, class_name)
-            if result is not None and not (isinstance(result, str) and result == 'QUIT'):
+            if result is not None:
                 np.save(output_path, result)
                 return 'success'
     except Exception as e:
@@ -317,7 +317,7 @@ def main():
     total_processed = 0
     total_skipped = 0
     total_errors = 0
-    
+
     with ProcessPoolExecutor(max_workers=None) as executor:
         # Submit all tasks
         futures = {executor.submit(process_single_video, task): task for task in all_tasks}

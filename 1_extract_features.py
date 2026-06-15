@@ -11,7 +11,7 @@ RAW_VIDEO_DIR = 'Dataset/raw_video'
 OUTPUT_DIR    = 'MP_Data'
 SEQUENCE_LENGTH = 30
 MP_MIN_WIDTH = 640
-SHOW_PREVIEW = True
+SHOW_PREVIEW = False  # Disable preview for headless environments
 
 # We only track critical pose points: shoulders (11, 12), elbows (13, 14), wrists (15, 16)
 # This reduces dimensionality and avoids face/leg noise.

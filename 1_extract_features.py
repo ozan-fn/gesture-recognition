@@ -1,4 +1,5 @@
 import os
+os.environ.pop('MPLBACKEND', None)
 import cv2
 import numpy as np
 from tqdm import tqdm

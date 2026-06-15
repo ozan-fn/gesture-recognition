@@ -15,9 +15,19 @@ ENV/
 # *.h5
 # *.pkl
 
-# Data directories
-# MP_Data/
+# Data directories (large video files)
 Dataset/
+raw_videos/
+raw_video/
+MP_Data/
+
+# Video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+*.wmv
 
 # IDE
 .vscode/

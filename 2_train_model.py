@@ -1,15 +1,28 @@
 import os
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense, Dropout
-from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+from tensorflow.keras.models import Sequential  # type: ignore
+from tensorflow.keras.layers import LSTM, Dense, Dropout, Bidirectional, BatchNormalization  # type: ignore
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau  # type: ignore
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelBinarizer, StandardScaler
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_recall_fscore_support
 import matplotlib.pyplot as plt
-import seaborn as sns
+import seaborn as sns  # type: ignore
 import pickle
+import multiprocessing
+from typing import Tuple, List, Any
+
+# Enable parallel processing
+physical_devices = tf.config.list_physical_devices('GPU')
+if len(physical_devices) > 0:
+    tf.config.experimental.set_memory_growth(physical_devices[0], True)
+    print(f"GPU Available: {physical_devices[0]}")
+else:
+    # Optimize CPU performance
+    tf.config.threading.set_intra_op_parallelism_threads(multiprocessing.cpu_count())
+    tf.config.threading.set_inter_op_parallelism_threads(multiprocessing.cpu_count())
+    print(f"Using CPU with {multiprocessing.cpu_count()} threads")
 
 # === CONFIGURATION ===
 DATA_DIR = 'MP_Data'
@@ -20,8 +33,9 @@ REPORT_DIR = 'evaluation_results'
 SEQUENCE_LENGTH = 30
 SEED = 42
 
-def load_data():
-    X, y = [], []
+def load_data() -> Tuple[np.ndarray, np.ndarray, List[str]]:
+    X: List[Any] = []
+    y: List[str] = []
     class_names = sorted([d for d in os.listdir(DATA_DIR) if os.path.isdir(os.path.join(DATA_DIR, d))])
     for idx, class_name in enumerate(class_names):
         class_dir = os.path.join(DATA_DIR, class_name)
@@ -41,18 +55,20 @@ def load_data():
                     try:
                         os.remove(filepath)
                         print(f"  [Cleaned] Deleted corrupted file: {filepath}")
-                    except:
+                    except OSError:
                         pass
-    X = np.array(X)
-    y = np.array(y)
-    return X, y, class_names
+    X_array = np.array(X, dtype=np.float32)
+    y_array = np.array(y)
+    return X_array, y_array, class_names
 
-def main():
+def main() -> None:
     X, y, class_names = load_data()
     print(f"Loaded {X.shape[0]} samples with shape {X.shape[1:]}, {len(class_names)} classes.")
 
     # Flatten sequence for scaling
-    num_samples, seq_len, num_features = X.shape
+    num_samples: int = int(X.shape[0])
+    seq_len: int = int(X.shape[1])
+    num_features: int = int(X.shape[2])
     X_flat = X.reshape(-1, num_features)
     
     # Fit StandardScaler
@@ -69,20 +85,40 @@ def main():
         y_encoded = np.hstack((1 - y_encoded, y_encoded)) # Convert binary to categorical representation
 
     # Stratified split
-    X_train, X_test, y_train, y_test = train_test_split(
+    X_train_raw, X_test_raw, y_train, y_test = train_test_split(
         X_scaled, y_encoded, test_size=0.2, random_state=SEED, stratify=y
     )
+    
+    # Type assertions for clarity
+    X_train: np.ndarray = X_train_raw  # type: ignore
+    X_test: np.ndarray = X_test_raw  # type: ignore
 
-    # Model architecture
-    input_shape = X_train.shape[1:]
-    num_classes = y_encoded.shape[1]
+    # Model architecture - Enhanced with Bidirectional LSTM and BatchNorm
+    seq_length: int = int(X_train.shape[1])  # type: ignore
+    feat_dim: int = int(X_train.shape[2])  # type: ignore
+    input_shape: Tuple[int, int] = (seq_length, feat_dim)
+    num_classes: int = int(y_encoded.shape[1])  # type: ignore
 
     model = Sequential([
-        LSTM(128, return_sequences=True, activation='tanh', input_shape=input_shape),
-        Dropout(0.3),
+        Bidirectional(LSTM(128, return_sequences=True, activation='tanh'), input_shape=input_shape),
+        BatchNormalization(),
+        Dropout(0.4),
+        
+        Bidirectional(LSTM(64, return_sequences=True, activation='tanh')),
+        BatchNormalization(),
+        Dropout(0.4),
+        
         LSTM(64, activation='tanh'),
+        BatchNormalization(),
         Dropout(0.3),
+        
+        Dense(128, activation='relu'),
+        BatchNormalization(),
+        Dropout(0.3),
+        
         Dense(64, activation='relu'),
+        Dropout(0.2),
+        
         Dense(num_classes, activation='softmax')
     ])
 
@@ -91,18 +127,28 @@ def main():
         loss='categorical_crossentropy',
         metrics=['accuracy']
     )
+    
+    print("\n" + "="*60)
+    print("MODEL ARCHITECTURE")
+    print("="*60)
+    model.summary()
+    print("="*60 + "\n")
 
     callbacks = [
-        EarlyStopping(monitor='val_loss', patience=25, restore_best_weights=True),
-        ModelCheckpoint(MODEL_PATH, monitor='val_loss', save_best_only=True)
+        EarlyStopping(monitor='val_loss', patience=30, restore_best_weights=True, verbose=1),
+        ModelCheckpoint(MODEL_PATH, monitor='val_loss', save_best_only=True, verbose=1),
+        ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=10, min_lr=1e-6, verbose=1)
     ]
 
     history = model.fit(
         X_train, y_train,
         validation_data=(X_test, y_test),
-        epochs=150,
-        batch_size=16,
-        callbacks=callbacks
+        epochs=200,
+        batch_size=32,
+        callbacks=callbacks,
+        workers=multiprocessing.cpu_count(),
+        use_multiprocessing=True,
+        verbose=1
     )
 
     # Save scaler
@@ -132,15 +178,24 @@ def main():
     print(f"\n[Overall Accuracy]: {accuracy:.4f} ({accuracy*100:.2f}%)")
     
     # Precision, Recall, F1 per class
-    precision, recall, f1, support = precision_recall_fscore_support(
+    metrics = precision_recall_fscore_support(
         y_true, y_pred, average=None, labels=range(len(class_names))
     )
+    precision_arr: np.ndarray = np.array(metrics[0])
+    recall_arr: np.ndarray = np.array(metrics[1])
+    f1_arr: np.ndarray = np.array(metrics[2])
+    support_arr: np.ndarray = np.array(metrics[3])
     
     print("\n[Per-Class Metrics]:")
     print(f"{'Class':<20} {'Precision':<12} {'Recall':<12} {'F1-Score':<12} {'Support':<10}")
     print("-" * 66)
     for i, cls in enumerate(class_names):
-        print(f"{cls:<20} {precision[i]:<12.4f} {recall[i]:<12.4f} {f1[i]:<12.4f} {support[i]:<10}")
+        if i < len(precision_arr):
+            prec = float(precision_arr[i])
+            rec = float(recall_arr[i])
+            f1_val = float(f1_arr[i])
+            supp = int(support_arr[i])
+            print(f"{cls:<20} {prec:<12.4f} {rec:<12.4f} {f1_val:<12.4f} {supp:<10}")
     
     # Weighted averages
     precision_avg, recall_avg, f1_avg, _ = precision_recall_fscore_support(
@@ -159,7 +214,7 @@ def main():
         f.write("GESTURE RECOGNITION - EVALUATION REPORT\n")
         f.write("=" * 60 + "\n\n")
         f.write(f"Overall Accuracy: {accuracy:.4f} ({accuracy*100:.2f}%)\n\n")
-        f.write(report)
+        f.write(str(report))
     
     # Confusion Matrix
     cm = confusion_matrix(y_true, y_pred)

@@ -5,7 +5,6 @@ import mediapipe as mp
 import tensorflow as tf
 import pickle
 import threading
-from collections import deque
 
 os.environ.setdefault('QT_QPA_PLATFORM', 'xcb')
 
@@ -20,8 +19,8 @@ EMA_ALPHA           = 0.2
 
 POSE_LANDMARKS_IDX = [11, 12, 13, 14, 15, 16]
 
-mp_holistic = mp.solutions.holistic
-mp_drawing  = mp.solutions.drawing_utils
+mp_holistic = mp.solutions.holistic  # type: ignore
+mp_drawing  = mp.solutions.drawing_utils  # type: ignore
 
 # === STATE MACHINE ===
 STATE_IDLE       = 'IDLE'
@@ -42,8 +41,9 @@ class Normalizer:
             self.ref_ema = ref
             self.scale_ema = scale
         else:
-            self.ref_ema   = EMA_ALPHA * ref + (1 - EMA_ALPHA) * self.ref_ema
-            self.scale_ema = EMA_ALPHA * scale + (1 - EMA_ALPHA) * self.scale_ema
+            if self.ref_ema is not None and self.scale_ema is not None:
+                self.ref_ema   = EMA_ALPHA * ref + (1 - EMA_ALPHA) * self.ref_ema
+                self.scale_ema = EMA_ALPHA * scale + (1 - EMA_ALPHA) * self.scale_ema
         return self.ref_ema, self.scale_ema
 
     def get_ref_and_scale(self, results, image_shape):

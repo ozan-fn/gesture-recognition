@@ -297,15 +297,6 @@ def main():
     print("Model Complexity: 0 (fastest)")
     print()
 
-    # Pre-download model once to avoid redundant downloads in each subprocess
-    print("Pre-downloading MediaPipe model...")
-    try:
-        with mp_holistic.Holistic(static_image_mode=False, model_complexity=0, enable_segmentation=False):
-            pass  # Just download the model
-        print("Model downloaded successfully.\n")
-    except Exception as e:
-        print(f"Warning: Model pre-download failed: {e}\n")
-
     # Collect all video tasks
     all_tasks = []
     for class_name in classes:

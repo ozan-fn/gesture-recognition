@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns  # type: ignore
 import pickle
 import multiprocessing
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from typing import Tuple, List, Any
 
 # Enable parallel processing
@@ -33,30 +34,53 @@ REPORT_DIR = 'evaluation_results'
 SEQUENCE_LENGTH = 30
 SEED = 42
 
+def load_single_file(filepath):
+    """Load a single .npy file and return (data, class_name) or None if invalid."""
+    try:
+        data = np.load(filepath)
+        if data.size == 0 or data.shape[0] != SEQUENCE_LENGTH:
+            return None, filepath, 'invalid'
+        # Extract class_name from path: MP_Data/class_name/file.npy
+        class_name = os.path.basename(os.path.dirname(filepath))
+        return data, filepath, class_name
+    except Exception:
+        # Delete corrupted files to clean up
+        try:
+            os.remove(filepath)
+            print(f"  [Cleaned] Deleted corrupted file: {filepath}")
+        except OSError:
+            pass
+        return None, filepath, 'error'
+
 def load_data() -> Tuple[np.ndarray, np.ndarray, List[str]]:
     X: List[Any] = []
     y: List[str] = []
     class_names = sorted([d for d in os.listdir(DATA_DIR) if os.path.isdir(os.path.join(DATA_DIR, d))])
-    for idx, class_name in enumerate(class_names):
+
+    # Collect all file paths
+    all_files = []
+    for class_name in class_names:
         class_dir = os.path.join(DATA_DIR, class_name)
         for file in os.listdir(class_dir):
             if file.endswith('.npy'):
-                filepath = os.path.join(class_dir, file)
-                try:
-                    data = np.load(filepath)
-                    if data.size == 0 or data.shape[0] != SEQUENCE_LENGTH:
-                        print(f"  [Warn] Skipping corrupted/empty file: {filepath}")
-                        continue
-                    X.append(data)
-                    y.append(class_name)
-                except Exception as e:
-                    print(f"  [Warn] Failed to load {filepath}: {e}")
-                    # Delete corrupted files to clean up
-                    try:
-                        os.remove(filepath)
-                        print(f"  [Cleaned] Deleted corrupted file: {filepath}")
-                    except OSError:
-                        pass
+                all_files.append(os.path.join(class_dir, file))
+
+    print(f"  Loading {len(all_files)} files in parallel...")
+
+    # Load files in parallel
+    max_workers = min(4, multiprocessing.cpu_count())
+    with ProcessPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(load_single_file, f): f for f in all_files}
+        for future in as_completed(futures):
+            data, filepath, result = future.result()
+            if result == 'error':
+                pass  # Already handled in worker
+            elif result == 'invalid':
+                print(f"  [Warn] Skipping corrupted/empty file: {filepath}")
+            else:
+                X.append(data)
+                y.append(result)  # result is class_name
+
     X_array = np.array(X, dtype=np.float32)
     y_array = np.array(y)
     return X_array, y_array, class_names

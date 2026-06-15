@@ -3,6 +3,8 @@ import cv2
 import numpy as np
 from tqdm import tqdm
 import mediapipe as mp
+from concurrent.futures import ProcessPoolExecutor, as_completed
+import multiprocessing
 
 os.environ.setdefault('QT_QPA_PLATFORM', 'xcb')
 
@@ -11,14 +13,12 @@ RAW_VIDEO_DIR = 'Dataset/raw_video'
 OUTPUT_DIR    = 'MP_Data'
 SEQUENCE_LENGTH = 30
 MP_MIN_WIDTH = 640
-SHOW_PREVIEW = False  # Disable preview for headless environments
 
 # We only track critical pose points: shoulders (11, 12), elbows (13, 14), wrists (15, 16)
 # This reduces dimensionality and avoids face/leg noise.
 POSE_LANDMARKS_IDX = [11, 12, 13, 14, 15, 16]
 
 mp_holistic  = mp.solutions.holistic  # type: ignore
-mp_drawing   = mp.solutions.drawing_utils  # type: ignore
 
 def get_ref_and_scale(results, image_shape):
     """Calculates shoulder midpoint and shoulder distance for scale-invariant normalization."""
@@ -177,42 +177,6 @@ def extract_keypoints(results, image_shape, prev_ref=None, prev_scale=None, prev
     
     return base_features, ref, scale, left_wrist_pos, right_wrist_pos
 
-def draw_preview(frame, results, class_name, vid_name, frame_idx, total_frames, sampled_indices, ref):
-    """Draws tracking overlay for validation."""
-    h, w = frame.shape[:2]
-    
-    # Draw landmarks
-    mp_drawing.draw_landmarks(frame, results.pose_landmarks, mp_holistic.POSE_CONNECTIONS)
-    mp_drawing.draw_landmarks(frame, results.left_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
-    mp_drawing.draw_landmarks(frame, results.right_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
-
-    # Reference point marker
-    cv2.circle(frame, (int(ref[0]), int(ref[1])), 8, (0, 0, 255), -1)
-
-    # UI details
-    info = [
-        f"Class: {class_name}",
-        f"Video: {vid_name}",
-        f"Frame: {frame_idx + 1}/{total_frames}",
-        f"L Hand: {'OK' if results.left_hand_landmarks else 'MISSING'}",
-        f"R Hand: {'OK' if results.right_hand_landmarks else 'MISSING'}"
-    ]
-    for i, text in enumerate(info):
-        color = (0, 255, 0) if "OK" in text or "Class" in text or "Video" in text or "Frame" in text else (0, 0, 255)
-        cv2.putText(frame, text, (10, 25 + i * 25), cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
-
-    # Progress bar
-    bar_w = w - 40
-    progress = (frame_idx + 1) / total_frames
-    cv2.rectangle(frame, (20, h - 30), (20 + bar_w, h - 15), (50, 50, 50), -1)
-    cv2.rectangle(frame, (20, h - 30), (20 + int(bar_w * progress), h - 15), (0, 200, 255), -1)
-
-    for si in sampled_indices:
-        sx = 20 + int(bar_w * si / total_frames)
-        cv2.circle(frame, (sx, h - 22), 4, (0, 255, 255), -1)
-
-    cv2.putText(frame, "SPACE=skip  Q=quit", (20, h - 35), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (200, 200, 200), 1)
-
 def sample_frames(total_frames, desired_count):
     if total_frames < desired_count:
         return np.linspace(0, total_frames - 1, desired_count).astype(int)
@@ -222,7 +186,6 @@ def process_video(video_path, holistic, class_name):
     cap = cv2.VideoCapture(video_path)
     vid_name = os.path.basename(video_path)
 
-    frames_data = []
     results_data = []
     keypoints_data = []
     ref_points = []
@@ -251,10 +214,6 @@ def process_video(video_path, holistic, class_name):
         results_data.append(results)
         ref_points.append(prev_ref)
         wrist_positions.append((left_wrist, right_wrist))
-        
-        if SHOW_PREVIEW:
-            small_frame = cv2.resize(mp_frame, (640, int(mp_frame.shape[0] * (640 / mp_frame.shape[1]))))
-            frames_data.append(small_frame)
             
     cap.release()
 
@@ -276,27 +235,10 @@ def process_video(video_path, holistic, class_name):
         results_data   = results_data[start_idx:end_idx + 1]
         ref_points     = ref_points[start_idx:end_idx + 1]
         wrist_positions = wrist_positions[start_idx:end_idx + 1]
-        if SHOW_PREVIEW:
-            frames_data = frames_data[start_idx:end_idx + 1]
         
         total_frames = len(keypoints_data)
-        print(f"  [Crop] {vid_name}: frames {start_idx}-{end_idx} (active: {len(hand_indices)})")
-    else:
-        print(f"  [Warn] {vid_name}: hands missing. No crop.")
 
     sampled_indices = sample_frames(total_frames, SEQUENCE_LENGTH)
-
-    if SHOW_PREVIEW and len(frames_data) > 0:
-        for i, (frame, results, ref) in enumerate(zip(frames_data, results_data, ref_points)):
-            display = frame.copy()
-            draw_preview(display, results, class_name, vid_name, i, total_frames, sampled_indices, ref)
-            cv2.imshow('Preview Tracking', display)
-            key = cv2.waitKey(30) & 0xFF
-            if key == ord('q'):
-                cv2.destroyAllWindows()
-                return 'QUIT'
-            elif key == ord(' '):
-                break
 
     # Sample keypoints
     sequence = np.array([keypoints_data[i] for i in sampled_indices])
@@ -326,37 +268,78 @@ def process_video(video_path, holistic, class_name):
     
     return sequence_with_velocity
 
+# --- WORKER FUNCTION FOR PARALLEL PROCESSING ---
+def process_single_video(video_info):
+    """Process a single video in a separate CPU core."""
+    video_path, class_name, output_path = video_info
+    
+    # Check if already exists (skip)
+    if os.path.exists(output_path):
+        return 'skipped'
+    
+    try:
+        # Initialize MediaPipe independently in each process
+        with mp_holistic.Holistic(static_image_mode=False, model_complexity=0, enable_segmentation=False) as holistic:
+            result = process_video(video_path, holistic, class_name)
+            if result is not None and not (isinstance(result, str) and result == 'QUIT'):
+                np.save(output_path, result)
+                return 'success'
+    except Exception as e:
+        print(f"  [Error] {os.path.basename(video_path)}: {e}")
+        return 'error'
+    return 'error'
+
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     classes = sorted([d for d in os.listdir(RAW_VIDEO_DIR) if os.path.isdir(os.path.join(RAW_VIDEO_DIR, d))])
     print(f"Classes: {classes}")
+    print(f"CPU Cores: {multiprocessing.cpu_count()}")
+    print("Model Complexity: 0 (fastest)")
+    print()
 
-    quit_all = False
-    with mp_holistic.Holistic(static_image_mode=False, model_complexity=1, enable_segmentation=False) as holistic:
-        for class_name in classes:
-            if quit_all:
-                break
-            class_dir = os.path.join(RAW_VIDEO_DIR, class_name)
-            out_class_dir = os.path.join(OUTPUT_DIR, class_name)
-            os.makedirs(out_class_dir, exist_ok=True)
+    # Collect all video tasks
+    all_tasks = []
+    for class_name in classes:
+        class_dir = os.path.join(RAW_VIDEO_DIR, class_name)
+        out_class_dir = os.path.join(OUTPUT_DIR, class_name)
+        os.makedirs(out_class_dir, exist_ok=True)
 
-            videos = sorted([f for f in os.listdir(class_dir) if f.lower().endswith(('.mp4', '.avi', '.mov'))])
-            for vid in tqdm(videos, desc=f"Class {class_name}"):
-                video_path = os.path.join(class_dir, vid)
-                try:
-                    result = process_video(video_path, holistic, class_name)
-                    if result is None:
-                        continue
-                    if isinstance(result, str) and result == 'QUIT':
-                        quit_all = True
-                        break
-                    np.save(os.path.join(out_class_dir, os.path.splitext(vid)[0] + '.npy'), result)
-                except Exception as e:
-                    print(f"  [Error] {vid}: {e}")
+        videos = sorted([f for f in os.listdir(class_dir) if f.lower().endswith(('.mp4', '.avi', '.mov'))])
+        for vid in videos:
+            video_path = os.path.join(class_dir, vid)
+            output_path = os.path.join(out_class_dir, os.path.splitext(vid)[0] + '.npy')
+            all_tasks.append((video_path, class_name, output_path))
 
-    if SHOW_PREVIEW:
-        cv2.destroyAllWindows()
-    print("Done.")
+    print(f"Total videos to process: {len(all_tasks)}")
+    print("Starting parallel extraction...\n")
+
+    # Execute parallel processing using all CPU cores
+    total_processed = 0
+    total_skipped = 0
+    total_errors = 0
+    
+    with ProcessPoolExecutor(max_workers=None) as executor:
+        # Submit all tasks
+        futures = {executor.submit(process_single_video, task): task for task in all_tasks}
+
+        # Progress bar for all videos
+        for future in tqdm(as_completed(futures), total=len(futures), desc="Processing All Videos"):
+            status = future.result()
+            if status == 'success':
+                total_processed += 1
+            elif status == 'skipped':
+                total_skipped += 1
+            elif status == 'error':
+                total_errors += 1
+
+    print("\n" + "="*60)
+    print("Feature extraction complete!")
+    print(f"Processed: {total_processed} videos")
+    print(f"Skipped (already exists): {total_skipped} videos")
+    print(f"Errors: {total_errors} videos")
+    print(f"Output directory: {OUTPUT_DIR}")
+    print("Features per frame: 106 (96 base + 4 distance + 2 angle + 4 velocity)")
+    print("="*60)
 
 if __name__ == "__main__":
     main()

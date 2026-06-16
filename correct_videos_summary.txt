@@ -1,0 +1,307 @@
+======================================================================
+CORRECT VIDEOS SUMMARY
+======================================================================
+
+Apa:
+  - BISINDO_Apa_001.mp4
+  - BISINDO_Apa_002.mp4
+  - BISINDO_Apa_003.mp4
+  - BISINDO_Apa_004.mp4
+  - BISINDO_Apa_005.mp4
+
+Bagaimana:
+  - BISINDO_Bagaimana_001.mp4
+  - BISINDO_Bagaimana_002.mp4
+  - BISINDO_Bagaimana_003.mp4
+  - BISINDO_Bagaimana_004.mp4
+  - BISINDO_Bagaimana_005.mp4
+
+Baik:
+  - BISINDO_Baik_001.mp4
+  - BISINDO_Baik_002.mp4
+  - BISINDO_Baik_003.mp4
+  - BISINDO_Baik_004.mp4
+  - BISINDO_Baik_005.mp4
+
+Belajar:
+  - BISINDO_Belajar_001.mp4
+  - BISINDO_Belajar_002.mp4
+  - BISINDO_Belajar_003.mp4
+  - BISINDO_Belajar_004.mp4
+  - BISINDO_Belajar_005.mp4
+
+Berapa:
+  - BISINDO_Berapa_001.mp4
+  - BISINDO_Berapa_002.mp4
+  - BISINDO_Berapa_003.mp4
+  - BISINDO_Berapa_004.mp4
+  - BISINDO_Berapa_005.mp4
+
+Berdiri:
+  - BISINDO_Berdiri_001.mp4
+  - BISINDO_Berdiri_003.mp4
+  - BISINDO_Berdiri_004.mp4
+  - BISINDO_Berdiri_005.mp4
+
+Bingung:
+  - BISINDO_Bingung_001.mp4
+  - BISINDO_Bingung_002.mp4
+  - BISINDO_Bingung_003.mp4
+  - BISINDO_Bingung_004.mp4
+  - BISINDO_Bingung_005.mp4
+
+Dia:
+  - BISINDO_Dia_003.mp4
+  - BISINDO_Dia_004.mp4
+  - BISINDO_Dia_005.mp4
+
+Dimana:
+  - BISINDO_Dimana_001.mp4
+  - BISINDO_Dimana_002.mp4
+  - BISINDO_Dimana_003.mp4
+  - BISINDO_Dimana_004.mp4
+  - BISINDO_Dimana_005.mp4
+
+Duduk:
+  - BISINDO_Duduk_001.mp4
+  - BISINDO_Duduk_002.mp4
+  - BISINDO_Duduk_003.mp4
+  - BISINDO_Duduk_004.mp4
+  - BISINDO_Duduk_005.mp4
+
+Halo:
+  - BISINDO_Halo_001.mp4
+  - BISINDO_Halo_002.mp4
+  - BISINDO_Halo_003.mp4
+  - BISINDO_Halo_004.mp4
+  - BISINDO_Halo_005.mp4
+
+Kalian:
+  - BISINDO_Kalian_001.mp4
+  - BISINDO_Kalian_002.mp4
+  - BISINDO_Kalian_003.mp4
+  - BISINDO_Kalian_004.mp4
+  - BISINDO_Kalian_005.mp4
+
+Kami:
+  - BISINDO_Kami_002.mp4
+  - BISINDO_Kami_004.mp4
+
+Kamu:
+  - BISINDO_Kamu_001.mp4
+  - BISINDO_Kamu_002.mp4
+  - BISINDO_Kamu_003.mp4
+  - BISINDO_Kamu_004.mp4
+  - BISINDO_Kamu_005.mp4
+
+Kapan:
+  - BISINDO_Kapan_001.mp4
+  - BISINDO_Kapan_002.mp4
+  - BISINDO_Kapan_003.mp4
+  - BISINDO_Kapan_004.mp4
+  - BISINDO_Kapan_005.mp4
+
+Kemana:
+  - BISINDO_Kemana_001.mp4
+  - BISINDO_Kemana_002.mp4
+  - BISINDO_Kemana_003.mp4
+  - BISINDO_Kemana_004.mp4
+  - BISINDO_Kemana_005.mp4
+
+Kita:
+  - BISINDO_Kita_001.mp4
+  - BISINDO_Kita_002.mp4
+  - BISINDO_Kita_003.mp4
+  - BISINDO_Kita_004.mp4
+  - BISINDO_Kita_005.mp4
+
+Makan:
+  - BISINDO_Makan_001.mp4
+  - BISINDO_Makan_002.mp4
+  - BISINDO_Makan_003.mp4
+  - BISINDO_Makan_004.mp4
+  - BISINDO_Makan_005.mp4
+
+Mandi:
+  - BISINDO_Mandi_002.mp4
+  - BISINDO_Mandi_003.mp4
+  - BISINDO_Mandi_004.mp4
+  - BISINDO_Mandi_005.mp4
+
+Marah:
+  - BISINDO_Marah_001.mp4
+  - BISINDO_Marah_005.mp4
+
+Melihat:
+  - BISINDO_Melihat_001.mp4
+  - BISINDO_Melihat_002.mp4
+  - BISINDO_Melihat_003.mp4
+  - BISINDO_Melihat_004.mp4
+  - BISINDO_Melihat_005.mp4
+
+Membaca:
+  - BISINDO_Membaca_001.mp4
+  - BISINDO_Membaca_002.mp4
+  - BISINDO_Membaca_003.mp4
+  - BISINDO_Membaca_004.mp4
+  - BISINDO_Membaca_005.mp4
+
+Menulis:
+  - BISINDO_Menulis_001.mp4
+  - BISINDO_Menulis_002.mp4
+  - BISINDO_Menulis_003.mp4
+  - BISINDO_Menulis_004.mp4
+  - BISINDO_Menulis_005.mp4
+
+Mereka:
+  - BISINDO_Mereka_001.mp4
+  - BISINDO_Mereka_002.mp4
+  - BISINDO_Mereka_003.mp4
+  - BISINDO_Mereka_004.mp4
+  - BISINDO_Mereka_005.mp4
+
+Minum:
+  - BISINDO_Minum_001.mp4
+  - BISINDO_Minum_002.mp4
+  - BISINDO_Minum_003.mp4
+  - BISINDO_Minum_004.mp4
+  - BISINDO_Minum_005.mp4
+
+Pendek:
+  - BISINDO_Pendek_001.mp4
+  - BISINDO_Pendek_002.mp4
+  - BISINDO_Pendek_003.mp4
+  - BISINDO_Pendek_004.mp4
+  - BISINDO_Pendek_005.mp4
+
+Ramah:
+  - BISINDO_Ramah_001.mp4
+  - BISINDO_Ramah_002.mp4
+  - BISINDO_Ramah_005.mp4
+
+Sabar:
+  - BISINDO_Sabar_001.mp4
+  - BISINDO_Sabar_002.mp4
+  - BISINDO_Sabar_003.mp4
+  - BISINDO_Sabar_004.mp4
+  - BISINDO_Sabar_005.mp4
+
+Saya:
+  - BISINDO_Saya_001.mp4
+  - BISINDO_Saya_005.mp4
+
+Sedih:
+  - BISINDO_Sedih_002.mp4
+  - BISINDO_Sedih_003.mp4
+  - BISINDO_Sedih_005.mp4
+
+Senang:
+  - BISINDO_Senang_001.mp4
+  - BISINDO_Senang_002.mp4
+  - BISINDO_Senang_003.mp4
+  - BISINDO_Senang_004.mp4
+  - BISINDO_Senang_005.mp4
+
+Siapa:
+  - BISINDO_Siapa_001.mp4
+  - BISINDO_Siapa_002.mp4
+  - BISINDO_Siapa_003.mp4
+  - BISINDO_Siapa_004.mp4
+  - BISINDO_Siapa_005.mp4
+
+Terima Kasih:
+  - BISINDO_Terima Kasih_001.mp4
+  - BISINDO_Terima Kasih_002.mp4
+  - BISINDO_Terima Kasih_003.mp4
+  - BISINDO_Terima Kasih_004.mp4
+  - BISINDO_Terima Kasih_005.mp4
+
+Tidur:
+  - BISINDO_Tidur_001.mp4
+  - BISINDO_Tidur_002.mp4
+  - BISINDO_Tidur_003.mp4
+  - BISINDO_Tidur_004.mp4
+  - BISINDO_Tidur_005.mp4
+
+Tinggi:
+  - BISINDO_Tinggi_001.mp4
+  - BISINDO_Tinggi_004.mp4
+
+
+======================================================================
+INCORRECT VIDEOS SUMMARY
+======================================================================
+
+Apa Kabar:
+  - BISINDO_Apa Kabar_001.mp4: predicted as 'Berdiri' (95.13%)
+  - BISINDO_Apa Kabar_002.mp4: predicted as 'Apa' (99.93%)
+  - BISINDO_Apa Kabar_003.mp4: predicted as 'Apa Kabar' (68.77%)
+  - BISINDO_Apa Kabar_004.mp4: predicted as 'Berdiri' (36.67%)
+  - BISINDO_Apa Kabar_005.mp4: predicted as 'Berdiri' (86.56%)
+
+Berdiri:
+  - BISINDO_Berdiri_002.mp4: predicted as 'Membaca' (32.71%)
+
+Dia:
+  - BISINDO_Dia_001.mp4: predicted as 'Dia' (56.31%)
+  - BISINDO_Dia_002.mp4: predicted as 'Dimana' (89.78%)
+
+Kami:
+  - BISINDO_Kami_001.mp4: predicted as 'Kami' (55.45%)
+  - BISINDO_Kami_003.mp4: predicted as 'Membaca' (52.28%)
+  - BISINDO_Kami_005.mp4: predicted as 'Kami' (60.29%)
+
+Mandi:
+  - BISINDO_Mandi_001.mp4: predicted as 'Mandi' (64.14%)
+
+Marah:
+  - BISINDO_Marah_002.mp4: predicted as 'Marah' (48.58%)
+  - BISINDO_Marah_003.mp4: predicted as 'Marah' (75.01%)
+  - BISINDO_Marah_004.mp4: predicted as 'Marah' (71.83%)
+
+Ramah:
+  - BISINDO_Ramah_003.mp4: predicted as 'Terima Kasih' (66.75%)
+  - BISINDO_Ramah_004.mp4: predicted as 'Ramah' (54.18%)
+
+Saya:
+  - BISINDO_Saya_002.mp4: predicted as 'Kami' (81.59%)
+  - BISINDO_Saya_003.mp4: predicted as 'Kami' (95.56%)
+  - BISINDO_Saya_004.mp4: predicted as 'Kami' (75.72%)
+
+Sedih:
+  - BISINDO_Sedih_001.mp4: predicted as 'Berapa' (95.56%)
+  - BISINDO_Sedih_004.mp4: predicted as 'Sedih' (74.53%)
+
+Selamat Malam:
+  - BISINDO_Selamat Malam_001.mp4: predicted as 'Makan' (93.48%)
+  - BISINDO_Selamat Malam_002.mp4: predicted as 'Makan' (54.78%)
+  - BISINDO_Selamat Malam_003.mp4: predicted as 'Makan' (62.98%)
+  - BISINDO_Selamat Malam_004.mp4: predicted as 'Makan' (63.49%)
+  - BISINDO_Selamat Malam_005.mp4: predicted as 'Kapan' (59.09%)
+
+Selamat Pagi:
+  - BISINDO_Selamat Pagi_001.mp4: predicted as 'Berapa' (67.15%)
+  - BISINDO_Selamat Pagi_002.mp4: predicted as 'Berapa' (79.00%)
+  - BISINDO_Selamat Pagi_003.mp4: predicted as 'Berapa' (90.06%)
+  - BISINDO_Selamat Pagi_004.mp4: predicted as 'Berapa' (98.92%)
+  - BISINDO_Selamat Pagi_005.mp4: predicted as 'Berapa' (72.16%)
+
+Selamat Siang:
+  - BISINDO_Selamat Siang_001.mp4: predicted as 'Makan' (98.09%)
+  - BISINDO_Selamat Siang_002.mp4: predicted as 'Makan' (87.08%)
+  - BISINDO_Selamat Siang_003.mp4: predicted as 'Berapa' (88.71%)
+  - BISINDO_Selamat Siang_004.mp4: predicted as 'Makan' (91.41%)
+  - BISINDO_Selamat Siang_005.mp4: predicted as 'Makan' (58.84%)
+
+Selamat Sore:
+  - BISINDO_Selamat Sore_001.mp4: predicted as 'Makan' (34.36%)
+  - BISINDO_Selamat Sore_002.mp4: predicted as 'Berapa' (93.19%)
+  - BISINDO_Selamat Sore_003.mp4: predicted as 'Makan' (91.72%)
+  - BISINDO_Selamat Sore_004.mp4: predicted as 'Berapa' (76.76%)
+  - BISINDO_Selamat Sore_005.mp4: predicted as 'Berapa' (67.88%)
+
+Tinggi:
+  - BISINDO_Tinggi_002.mp4: predicted as 'Sedih' (97.60%)
+  - BISINDO_Tinggi_003.mp4: predicted as 'Pendek' (98.13%)
+  - BISINDO_Tinggi_005.mp4: predicted as 'Pendek' (61.91%)
+

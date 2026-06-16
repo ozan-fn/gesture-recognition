@@ -4,3 +4,8 @@ tensorflow==2.15.0
 numpy==1.26.4
 scikit-learn==1.4.2
 tqdm==4.66.4
+streamlit
+seaborn
+matplotlib
+edge-tts
+pygame

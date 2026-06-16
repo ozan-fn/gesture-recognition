@@ -41,18 +41,20 @@ def load_data():
                     try:
                         os.remove(filepath)
                         print(f"  [Cleaned] Deleted corrupted file: {filepath}")
-                    except:
+                    except OSError:
                         pass
-    X = np.array(X)
-    y = np.array(y)
-    return X, y, class_names
+    X_array = np.array(X, dtype=np.float32)
+    y_array = np.array(y)
+    return X_array, y_array, class_names
 
 def main():
     X, y, class_names = load_data()
     print(f"Loaded {X.shape[0]} samples with shape {X.shape[1:]}, {len(class_names)} classes.")
 
     # Flatten sequence for scaling
-    num_samples, seq_len, num_features = X.shape
+    num_samples = X.shape[0]
+    seq_len = X.shape[1]
+    num_features = X.shape[2]
     X_flat = X.reshape(-1, num_features)
     
     # Fit StandardScaler
@@ -69,13 +71,18 @@ def main():
         y_encoded = np.hstack((1 - y_encoded, y_encoded)) # Convert binary to categorical representation
 
     # Stratified split
-    X_train, X_test, y_train, y_test = train_test_split(
+    X_train_split, X_test_split, y_train, y_test = train_test_split(
         X_scaled, y_encoded, test_size=0.2, random_state=SEED, stratify=y
     )
+    
+    X_train = np.array(X_train_split)
+    X_test = np.array(X_test_split)
 
     # Model architecture
-    input_shape = X_train.shape[1:]
-    num_classes = y_encoded.shape[1]
+    seq_length = int(X_train.shape[1])
+    feat_dim = int(X_train.shape[2])
+    input_shape = (seq_length, feat_dim)
+    num_classes = len(class_names) if y_encoded.shape[1] is None else int(y_encoded.shape[1])
 
     model = Sequential([
         LSTM(128, return_sequences=True, activation='tanh', input_shape=input_shape),
@@ -132,15 +139,20 @@ def main():
     print(f"\n[Overall Accuracy]: {accuracy:.4f} ({accuracy*100:.2f}%)")
     
     # Precision, Recall, F1 per class
-    precision, recall, f1, support = precision_recall_fscore_support(
+    metrics = precision_recall_fscore_support(
         y_true, y_pred, average=None, labels=range(len(class_names))
     )
+    precision_arr = np.array(metrics[0])
+    recall_arr = np.array(metrics[1])
+    f1_arr = np.array(metrics[2])
+    support_arr = np.array(metrics[3])
     
     print("\n[Per-Class Metrics]:")
     print(f"{'Class':<20} {'Precision':<12} {'Recall':<12} {'F1-Score':<12} {'Support':<10}")
     print("-" * 66)
     for i, cls in enumerate(class_names):
-        print(f"{cls:<20} {precision[i]:<12.4f} {recall[i]:<12.4f} {f1[i]:<12.4f} {support[i]:<10}")
+        if i < len(precision_arr):
+            print(f"{cls:<20} {float(precision_arr[i]):<12.4f} {float(recall_arr[i]):<12.4f} {float(f1_arr[i]):<12.4f} {int(support_arr[i]):<10}")
     
     # Weighted averages
     precision_avg, recall_avg, f1_avg, _ = precision_recall_fscore_support(
@@ -159,7 +171,7 @@ def main():
         f.write("GESTURE RECOGNITION - EVALUATION REPORT\n")
         f.write("=" * 60 + "\n\n")
         f.write(f"Overall Accuracy: {accuracy:.4f} ({accuracy*100:.2f}%)\n\n")
-        f.write(report)
+        f.write(str(report))
     
     # Confusion Matrix
     cm = confusion_matrix(y_true, y_pred)

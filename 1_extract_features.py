@@ -17,8 +17,8 @@ SHOW_PREVIEW = True
 # This reduces dimensionality and avoids face/leg noise.
 POSE_LANDMARKS_IDX = [11, 12, 13, 14, 15, 16]
 
-mp_holistic  = mp.solutions.holistic
-mp_drawing   = mp.solutions.drawing_utils
+mp_holistic  = mp.solutions.holistic  # type: ignore
+mp_drawing   = mp.solutions.drawing_utils  # type: ignore
 
 def get_ref_and_scale(results, image_shape):
     """Calculates shoulder midpoint and shoulder distance for scale-invariant normalization."""

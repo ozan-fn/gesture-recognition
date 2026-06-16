@@ -24,3 +24,9 @@ Dataset/
 .idea/
 *.swp
 *.swo
+
+# TTS Cache
+tts_cache/
+*.mp3
+
+raw_videos

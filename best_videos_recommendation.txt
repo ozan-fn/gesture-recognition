@@ -1,0 +1,203 @@
+======================================================================
+BEST VIDEO RECOMMENDATIONS (Keep These Videos)
+======================================================================
+
+Apa: raw_videos/raw_video\Apa\BISINDO_Apa_003.mp4 (confidence: 99.99%)
+Apa Kabar: NO CORRECT VIDEO FOUND
+Bagaimana: raw_videos/raw_video\Bagaimana\BISINDO_Bagaimana_003.mp4 (confidence: 99.96%)
+Baik: raw_videos/raw_video\Baik\BISINDO_Baik_004.mp4 (confidence: 99.95%)
+Belajar: raw_videos/raw_video\Belajar\BISINDO_Belajar_002.mp4 (confidence: 99.81%)
+Berapa: raw_videos/raw_video\Berapa\BISINDO_Berapa_003.mp4 (confidence: 99.89%)
+Berdiri: raw_videos/raw_video\Berdiri\BISINDO_Berdiri_005.mp4 (confidence: 99.92%)
+Bingung: raw_videos/raw_video\Bingung\BISINDO_Bingung_002.mp4 (confidence: 98.68%)
+Dia: raw_videos/raw_video\Dia\BISINDO_Dia_004.mp4 (confidence: 93.40%)
+Dimana: raw_videos/raw_video\Dimana\BISINDO_Dimana_003.mp4 (confidence: 99.85%)
+Duduk: raw_videos/raw_video\Duduk\BISINDO_Duduk_003.mp4 (confidence: 99.53%)
+Halo: raw_videos/raw_video\Halo\BISINDO_Halo_004.mp4 (confidence: 99.55%)
+Kalian: raw_videos/raw_video\Kalian\BISINDO_Kalian_001.mp4 (confidence: 99.98%)
+Kami: raw_videos/raw_video\Kami\BISINDO_Kami_002.mp4 (confidence: 97.36%)
+Kamu: raw_videos/raw_video\Kamu\BISINDO_Kamu_002.mp4 (confidence: 99.43%)
+Kapan: raw_videos/raw_video\Kapan\BISINDO_Kapan_005.mp4 (confidence: 99.85%)
+Kemana: raw_videos/raw_video\Kemana\BISINDO_Kemana_005.mp4 (confidence: 99.95%)
+Kita: raw_videos/raw_video\Kita\BISINDO_Kita_005.mp4 (confidence: 99.97%)
+Makan: raw_videos/raw_video\Makan\BISINDO_Makan_002.mp4 (confidence: 99.90%)
+Mandi: raw_videos/raw_video\Mandi\BISINDO_Mandi_005.mp4 (confidence: 97.29%)
+Marah: raw_videos/raw_video\Marah\BISINDO_Marah_001.mp4 (confidence: 98.26%)
+Melihat: raw_videos/raw_video\Melihat\BISINDO_Melihat_003.mp4 (confidence: 96.27%)
+Membaca: raw_videos/raw_video\Membaca\BISINDO_Membaca_001.mp4 (confidence: 98.79%)
+Menulis: raw_videos/raw_video\Menulis\BISINDO_Menulis_005.mp4 (confidence: 99.93%)
+Mereka: raw_videos/raw_video\Mereka\BISINDO_Mereka_004.mp4 (confidence: 99.99%)
+Minum: raw_videos/raw_video\Minum\BISINDO_Minum_004.mp4 (confidence: 99.22%)
+Pendek: raw_videos/raw_video\Pendek\BISINDO_Pendek_002.mp4 (confidence: 99.84%)
+Ramah: raw_videos/raw_video\Ramah\BISINDO_Ramah_002.mp4 (confidence: 99.66%)
+Sabar: raw_videos/raw_video\Sabar\BISINDO_Sabar_003.mp4 (confidence: 99.87%)
+Saya: raw_videos/raw_video\Saya\BISINDO_Saya_001.mp4 (confidence: 94.93%)
+Sedih: raw_videos/raw_video\Sedih\BISINDO_Sedih_005.mp4 (confidence: 98.78%)
+Selamat Malam: NO CORRECT VIDEO FOUND
+Selamat Pagi: NO CORRECT VIDEO FOUND
+Selamat Siang: NO CORRECT VIDEO FOUND
+Selamat Sore: NO CORRECT VIDEO FOUND
+Senang: raw_videos/raw_video\Senang\BISINDO_Senang_001.mp4 (confidence: 99.95%)
+Siapa: raw_videos/raw_video\Siapa\BISINDO_Siapa_001.mp4 (confidence: 99.95%)
+Terima Kasih: raw_videos/raw_video\Terima Kasih\BISINDO_Terima Kasih_004.mp4 (confidence: 97.46%)
+Tidur: raw_videos/raw_video\Tidur\BISINDO_Tidur_004.mp4 (confidence: 98.45%)
+Tinggi: raw_videos/raw_video\Tinggi\BISINDO_Tinggi_004.mp4 (confidence: 99.79%)
+
+======================================================================
+SUMMARY
+======================================================================
+Words with best video: 35/40
+Words without correct video: 5
+
+Words needing attention:
+  - Apa Kabar
+  - Selamat Malam
+  - Selamat Pagi
+  - Selamat Siang
+  - Selamat Sore
+
+======================================================================
+DELETE COMMANDS (Windows)
+======================================================================
+
+REM Delete all videos except the best ones
+del "raw_videos/raw_video\Apa\BISINDO_Apa_001.mp4"
+del "raw_videos/raw_video\Apa\BISINDO_Apa_002.mp4"
+del "raw_videos/raw_video\Apa\BISINDO_Apa_004.mp4"
+del "raw_videos/raw_video\Apa\BISINDO_Apa_005.mp4"
+del "raw_videos/raw_video\Bagaimana\BISINDO_Bagaimana_001.mp4"
+del "raw_videos/raw_video\Bagaimana\BISINDO_Bagaimana_002.mp4"
+del "raw_videos/raw_video\Bagaimana\BISINDO_Bagaimana_004.mp4"
+del "raw_videos/raw_video\Bagaimana\BISINDO_Bagaimana_005.mp4"
+del "raw_videos/raw_video\Baik\BISINDO_Baik_001.mp4"
+del "raw_videos/raw_video\Baik\BISINDO_Baik_002.mp4"
+del "raw_videos/raw_video\Baik\BISINDO_Baik_003.mp4"
+del "raw_videos/raw_video\Baik\BISINDO_Baik_005.mp4"
+del "raw_videos/raw_video\Belajar\BISINDO_Belajar_001.mp4"
+del "raw_videos/raw_video\Belajar\BISINDO_Belajar_003.mp4"
+del "raw_videos/raw_video\Belajar\BISINDO_Belajar_004.mp4"
+del "raw_videos/raw_video\Belajar\BISINDO_Belajar_005.mp4"
+del "raw_videos/raw_video\Berapa\BISINDO_Berapa_001.mp4"
+del "raw_videos/raw_video\Berapa\BISINDO_Berapa_002.mp4"
+del "raw_videos/raw_video\Berapa\BISINDO_Berapa_004.mp4"
+del "raw_videos/raw_video\Berapa\BISINDO_Berapa_005.mp4"
+del "raw_videos/raw_video\Berdiri\BISINDO_Berdiri_001.mp4"
+del "raw_videos/raw_video\Berdiri\BISINDO_Berdiri_003.mp4"
+del "raw_videos/raw_video\Berdiri\BISINDO_Berdiri_004.mp4"
+del "raw_videos/raw_video\Berdiri\BISINDO_Berdiri_002.mp4"
+del "raw_videos/raw_video\Bingung\BISINDO_Bingung_001.mp4"
+del "raw_videos/raw_video\Bingung\BISINDO_Bingung_003.mp4"
+del "raw_videos/raw_video\Bingung\BISINDO_Bingung_004.mp4"
+del "raw_videos/raw_video\Bingung\BISINDO_Bingung_005.mp4"
+del "raw_videos/raw_video\Dia\BISINDO_Dia_003.mp4"
+del "raw_videos/raw_video\Dia\BISINDO_Dia_005.mp4"
+del "raw_videos/raw_video\Dia\BISINDO_Dia_001.mp4"
+del "raw_videos/raw_video\Dia\BISINDO_Dia_002.mp4"
+del "raw_videos/raw_video\Dimana\BISINDO_Dimana_001.mp4"
+del "raw_videos/raw_video\Dimana\BISINDO_Dimana_002.mp4"
+del "raw_videos/raw_video\Dimana\BISINDO_Dimana_004.mp4"
+del "raw_videos/raw_video\Dimana\BISINDO_Dimana_005.mp4"
+del "raw_videos/raw_video\Duduk\BISINDO_Duduk_001.mp4"
+del "raw_videos/raw_video\Duduk\BISINDO_Duduk_002.mp4"
+del "raw_videos/raw_video\Duduk\BISINDO_Duduk_004.mp4"
+del "raw_videos/raw_video\Duduk\BISINDO_Duduk_005.mp4"
+del "raw_videos/raw_video\Halo\BISINDO_Halo_001.mp4"
+del "raw_videos/raw_video\Halo\BISINDO_Halo_002.mp4"
+del "raw_videos/raw_video\Halo\BISINDO_Halo_003.mp4"
+del "raw_videos/raw_video\Halo\BISINDO_Halo_005.mp4"
+del "raw_videos/raw_video\Kalian\BISINDO_Kalian_002.mp4"
+del "raw_videos/raw_video\Kalian\BISINDO_Kalian_003.mp4"
+del "raw_videos/raw_video\Kalian\BISINDO_Kalian_004.mp4"
+del "raw_videos/raw_video\Kalian\BISINDO_Kalian_005.mp4"
+del "raw_videos/raw_video\Kami\BISINDO_Kami_004.mp4"
+del "raw_videos/raw_video\Kami\BISINDO_Kami_001.mp4"
+del "raw_videos/raw_video\Kami\BISINDO_Kami_003.mp4"
+del "raw_videos/raw_video\Kami\BISINDO_Kami_005.mp4"
+del "raw_videos/raw_video\Kamu\BISINDO_Kamu_001.mp4"
+del "raw_videos/raw_video\Kamu\BISINDO_Kamu_003.mp4"
+del "raw_videos/raw_video\Kamu\BISINDO_Kamu_004.mp4"
+del "raw_videos/raw_video\Kamu\BISINDO_Kamu_005.mp4"
+del "raw_videos/raw_video\Kapan\BISINDO_Kapan_001.mp4"
+del "raw_videos/raw_video\Kapan\BISINDO_Kapan_002.mp4"
+del "raw_videos/raw_video\Kapan\BISINDO_Kapan_003.mp4"
+del "raw_videos/raw_video\Kapan\BISINDO_Kapan_004.mp4"
+del "raw_videos/raw_video\Kemana\BISINDO_Kemana_001.mp4"
+del "raw_videos/raw_video\Kemana\BISINDO_Kemana_002.mp4"
+del "raw_videos/raw_video\Kemana\BISINDO_Kemana_003.mp4"
+del "raw_videos/raw_video\Kemana\BISINDO_Kemana_004.mp4"
+del "raw_videos/raw_video\Kita\BISINDO_Kita_001.mp4"
+del "raw_videos/raw_video\Kita\BISINDO_Kita_002.mp4"
+del "raw_videos/raw_video\Kita\BISINDO_Kita_003.mp4"
+del "raw_videos/raw_video\Kita\BISINDO_Kita_004.mp4"
+del "raw_videos/raw_video\Makan\BISINDO_Makan_001.mp4"
+del "raw_videos/raw_video\Makan\BISINDO_Makan_003.mp4"
+del "raw_videos/raw_video\Makan\BISINDO_Makan_004.mp4"
+del "raw_videos/raw_video\Makan\BISINDO_Makan_005.mp4"
+del "raw_videos/raw_video\Mandi\BISINDO_Mandi_002.mp4"
+del "raw_videos/raw_video\Mandi\BISINDO_Mandi_003.mp4"
+del "raw_videos/raw_video\Mandi\BISINDO_Mandi_004.mp4"
+del "raw_videos/raw_video\Mandi\BISINDO_Mandi_001.mp4"
+del "raw_videos/raw_video\Marah\BISINDO_Marah_005.mp4"
+del "raw_videos/raw_video\Marah\BISINDO_Marah_002.mp4"
+del "raw_videos/raw_video\Marah\BISINDO_Marah_003.mp4"
+del "raw_videos/raw_video\Marah\BISINDO_Marah_004.mp4"
+del "raw_videos/raw_video\Melihat\BISINDO_Melihat_001.mp4"
+del "raw_videos/raw_video\Melihat\BISINDO_Melihat_002.mp4"
+del "raw_videos/raw_video\Melihat\BISINDO_Melihat_004.mp4"
+del "raw_videos/raw_video\Melihat\BISINDO_Melihat_005.mp4"
+del "raw_videos/raw_video\Membaca\BISINDO_Membaca_002.mp4"
+del "raw_videos/raw_video\Membaca\BISINDO_Membaca_003.mp4"
+del "raw_videos/raw_video\Membaca\BISINDO_Membaca_004.mp4"
+del "raw_videos/raw_video\Membaca\BISINDO_Membaca_005.mp4"
+del "raw_videos/raw_video\Menulis\BISINDO_Menulis_001.mp4"
+del "raw_videos/raw_video\Menulis\BISINDO_Menulis_002.mp4"
+del "raw_videos/raw_video\Menulis\BISINDO_Menulis_003.mp4"
+del "raw_videos/raw_video\Menulis\BISINDO_Menulis_004.mp4"
+del "raw_videos/raw_video\Mereka\BISINDO_Mereka_001.mp4"
+del "raw_videos/raw_video\Mereka\BISINDO_Mereka_002.mp4"
+del "raw_videos/raw_video\Mereka\BISINDO_Mereka_003.mp4"
+del "raw_videos/raw_video\Mereka\BISINDO_Mereka_005.mp4"
+del "raw_videos/raw_video\Minum\BISINDO_Minum_001.mp4"
+del "raw_videos/raw_video\Minum\BISINDO_Minum_002.mp4"
+del "raw_videos/raw_video\Minum\BISINDO_Minum_003.mp4"
+del "raw_videos/raw_video\Minum\BISINDO_Minum_005.mp4"
+del "raw_videos/raw_video\Pendek\BISINDO_Pendek_001.mp4"
+del "raw_videos/raw_video\Pendek\BISINDO_Pendek_003.mp4"
+del "raw_videos/raw_video\Pendek\BISINDO_Pendek_004.mp4"
+del "raw_videos/raw_video\Pendek\BISINDO_Pendek_005.mp4"
+del "raw_videos/raw_video\Ramah\BISINDO_Ramah_001.mp4"
+del "raw_videos/raw_video\Ramah\BISINDO_Ramah_005.mp4"
+del "raw_videos/raw_video\Ramah\BISINDO_Ramah_003.mp4"
+del "raw_videos/raw_video\Ramah\BISINDO_Ramah_004.mp4"
+del "raw_videos/raw_video\Sabar\BISINDO_Sabar_001.mp4"
+del "raw_videos/raw_video\Sabar\BISINDO_Sabar_002.mp4"
+del "raw_videos/raw_video\Sabar\BISINDO_Sabar_004.mp4"
+del "raw_videos/raw_video\Sabar\BISINDO_Sabar_005.mp4"
+del "raw_videos/raw_video\Saya\BISINDO_Saya_005.mp4"
+del "raw_videos/raw_video\Saya\BISINDO_Saya_002.mp4"
+del "raw_videos/raw_video\Saya\BISINDO_Saya_003.mp4"
+del "raw_videos/raw_video\Saya\BISINDO_Saya_004.mp4"
+del "raw_videos/raw_video\Sedih\BISINDO_Sedih_002.mp4"
+del "raw_videos/raw_video\Sedih\BISINDO_Sedih_003.mp4"
+del "raw_videos/raw_video\Sedih\BISINDO_Sedih_001.mp4"
+del "raw_videos/raw_video\Sedih\BISINDO_Sedih_004.mp4"
+del "raw_videos/raw_video\Senang\BISINDO_Senang_002.mp4"
+del "raw_videos/raw_video\Senang\BISINDO_Senang_003.mp4"
+del "raw_videos/raw_video\Senang\BISINDO_Senang_004.mp4"
+del "raw_videos/raw_video\Senang\BISINDO_Senang_005.mp4"
+del "raw_videos/raw_video\Siapa\BISINDO_Siapa_002.mp4"
+del "raw_videos/raw_video\Siapa\BISINDO_Siapa_003.mp4"
+del "raw_videos/raw_video\Siapa\BISINDO_Siapa_004.mp4"
+del "raw_videos/raw_video\Siapa\BISINDO_Siapa_005.mp4"
+del "raw_videos/raw_video\Terima Kasih\BISINDO_Terima Kasih_001.mp4"
+del "raw_videos/raw_video\Terima Kasih\BISINDO_Terima Kasih_002.mp4"
+del "raw_videos/raw_video\Terima Kasih\BISINDO_Terima Kasih_003.mp4"
+del "raw_videos/raw_video\Terima Kasih\BISINDO_Terima Kasih_005.mp4"
+del "raw_videos/raw_video\Tidur\BISINDO_Tidur_001.mp4"
+del "raw_videos/raw_video\Tidur\BISINDO_Tidur_002.mp4"
+del "raw_videos/raw_video\Tidur\BISINDO_Tidur_003.mp4"
+del "raw_videos/raw_video\Tidur\BISINDO_Tidur_005.mp4"
+del "raw_videos/raw_video\Tinggi\BISINDO_Tinggi_001.mp4"
+del "raw_videos/raw_video\Tinggi\BISINDO_Tinggi_002.mp4"
+del "raw_videos/raw_video\Tinggi\BISINDO_Tinggi_003.mp4"
+del "raw_videos/raw_video\Tinggi\BISINDO_Tinggi_005.mp4"
